@@ -186,7 +186,6 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\GalleryController.cs" />
-    <Compile Include="Controllers\GalleryTestController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ImagesController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -534,8 +533,6 @@
     <Content Include="Views\Gallery\GalleryVoteControl.cshtml" />
     <Content Include="Views\Gallery\_GalleryRateControl.cshtml" />
     <Content Include="Views\Gallery\ViewTest.cshtml" />
-    <Content Include="Views\GalleryTest\Index.cshtml" />
-    <Content Include="Views\GalleryTest\ViewGallery.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
