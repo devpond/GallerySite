@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.Design;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.DynamicData;
@@ -15,22 +16,29 @@ namespace Gallery.Web.Controllers
         // GET: Gallery
         public ActionResult Index()
         {
-            return View(db.ViewAllGalleries.ToList());
+            var galList = db.galleries.ToList();
+            return View(galList);
         }
 
+        [HttpGet]
         public ActionResult ViewGallery(int? Id)
         {
+            gallery selectedGallery = db.galleries.Find(Id);
             var galRating = db.ViewGalleryRatings.Where(x => x.GalleryID == Id)
                 .Select(x => x.AverageRating)
                 .FirstOrDefault();
             var galRating2 = 0.0;
             if (galRating != null)
             {
-                galRating2 = Math.Truncate((double) (galRating*100))/100;
+                galRating2 = Math.Truncate((double)(galRating * 100)) / 100;
             }
 
-            ViewBag.galleryName = db.ViewGalleryImages.Where(x => x.GalleryID == Id)
-                .Select(x => x.GalleryName).FirstOrDefault();
+            var rateList = new List<int>()
+            {
+                {01}, {02}, {03}, {04}, {05}, {06}, {07}, {08}, {09}, {10}
+            };
+            ViewBag.rateList = rateList;
+
             if (galRating2 != null)
             {
                 ViewBag.galleryRating = galRating2;
@@ -49,9 +57,21 @@ namespace Gallery.Web.Controllers
                 .Select(x => x.TotalVotes).FirstOrDefault();
             ViewBag.galleryId = Id;
 
-            
-            var selectedGallery = db.ViewGalleryImages.Where(x => x.GalleryID == Id);
             return View(selectedGallery);
+        }
+        [HttpPost]
+        public ActionResult ViewGallery(gallery gallery)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Entry(gallery).State = EntityState.Modified;
+                db.SaveChanges();
+                return View();
+            }
+            else
+            {
+                return View("Error");
+            }
         }
         [HttpGet]
         public ActionResult GalleryVoteControl()

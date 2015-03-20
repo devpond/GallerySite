@@ -1,4 +1,5 @@
-﻿@model IEnumerable<ViewAllGallery>
+﻿@model IEnumerable<Gallery.Web.gallery>
+
 @{
     ViewBag.Title = "Index";
 }
@@ -7,7 +8,7 @@
 
 @foreach (var item in Model)
 {
-    @Html.DisplayNameFor(x => x.GalleryName)<br/>
-    @Html.DisplayFor(x => item.GalleryName)<br/>
-    @Html.ActionLink("View", "ViewGallery", new { id = item.GalleryID })<br/>
+    @Html.DisplayNameFor(x => x.GalleryName)<br />
+    @Html.DisplayFor(x => item.GalleryName)<br />
+    @Html.ActionLink("View", "ViewGallery", new { id = item.GalleryID })<br />
 }

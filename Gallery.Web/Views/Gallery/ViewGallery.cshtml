@@ -1,33 +1,34 @@
-﻿@using Microsoft.Ajax.Utilities
-@model IEnumerable<Gallery.Web.ViewGalleryImage>
+﻿@model Gallery.Web.gallery
 
 @{
     ViewBag.Title = "ViewGallery";
 }
-
-<h2>@ViewBag.galleryName</h2>
-<h3>Averate Rating: @ViewBag.galleryRating</h3>
-<p>Likes: @ViewBag.galleryUpVotes</p>
-<p>Dislikes: @ViewBag.galleryDownVotes</p>
-<br/><br/>
-@try
-{
-    var galId = ViewBag.galleryId;
-    @Html.RenderPartial("_GalleryRateControl", @Model.)
-} catch (Exception){;}
-
 @if (Model != null)
 {
-    foreach (var item in Model)
+    <h2>@Model.GalleryName</h2>
+    <h3>Averate Rating: @ViewBag.galleryRating</h3>
+    <p>Likes: @ViewBag.galleryUpVotes</p>
+    <p>Dislikes: @ViewBag.galleryDownVotes</p>
+    <br />
+    <br />
+
+    if (Model != null)
     {
-        if (item.IsHidden != 1)
+        foreach (var item in Model.gallery_images)
         {
-            var imgLink = item.Location + item.Filename;
-            var img = item.Location + item.Filename + "?w=200&h=300&mode=crop";
-            
-            <a href ="@Url.Action("ViewImage", "Images", new { Id =item.ImageID }, null)">
-            <img src="@img"/>
+            if (item.image.IsHidden != 1)
+            {
+                var imgLink = item.image.site_locations.Location + item.image.Filename;
+                var img = item.image.site_locations.Location + item.image.Filename + "?w=200&h=300&mode=crop";
+
+                <a href="@Url.Action("ViewImage", "Images", new {Id = item.ImageID}, null)">
+                    <img src="@img" />
                 </a>
+            }
         }
     }
+}
+else
+{
+    <h2>Nothing to see!</h2>
 }
