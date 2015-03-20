@@ -1,0 +1,171 @@
+C:\Users\Simon\Documents\Visual Studio 2013\Projects\GallerySite\Gallery.Web\bin\Gallery.Web.dll.config
+C:\Users\Simon\Documents\Visual Studio 2013\Projects\GallerySite\Gallery.Web\bin\Gallery.Web.dll
+C:\Users\Simon\Documents\Visual Studio 2013\Projects\GallerySite\Gallery.Web\bin\Gallery.Web.pdb
+C:\Users\Simon\Documents\Visual Studio 2013\Projects\GallerySite\Gallery.Web\bin\Antlr3.Runtime.dll
+C:\Users\Simon\Documents\Visual Studio 2013\Projects\GallerySite\Gallery.Web\bin\EntityFramework.dll
+C:\Users\Simon\Documents\Visual Studio 2013\Projects\GallerySite\Gallery.Web\bin\EntityFramework.SqlServer.dll
+C:\Users\Simon\Documents\Visual Studio 2013\Projects\GallerySite\Gallery.Web\bin\ImageResizer.dll
+C:\Users\Simon\Documents\Visual Studio 2013\Projects\GallerySite\Gallery.Web\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Simon\Documents\Visual Studio 2013\Projects\GallerySite\Gallery.Web\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Simon\Documents\Visual Studio 2013\Projects\GallerySite\Gallery.Web\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Simon\Documents\Visual Studio 2013\Projects\GallerySite\Gallery.Web\bin\Microsoft.Owin.dll
+C:\Users\Simon\Documents\Visual Studio 2013\Projects\GallerySite\Gallery.Web\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Simon\Documents\Visual Studio 2013\Projects\GallerySite\Gallery.Web\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Simon\Documents\Visual Studio 2013\Projects\GallerySite\Gallery.Web\bin\Microsoft.Owin.Security.dll
+C:\Users\Simon\Documents\Visual Studio 2013\Projects\GallerySite\Gallery.Web\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\Simon\Documents\Visual Studio 2013\Projects\GallerySite\Gallery.Web\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\Simon\Documents\Visual Studio 2013\Projects\GallerySite\Gallery.Web\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\Simon\Documents\Visual Studio 2013\Projects\GallerySite\Gallery.Web\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Simon\Documents\Visual Studio 2013\Projects\GallerySite\Gallery.Web\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\Simon\Documents\Visual Studio 2013\Projects\GallerySite\Gallery.Web\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Simon\Documents\Visual Studio 2013\Projects\GallerySite\Gallery.Web\bin\Newtonsoft.Json.dll
+C:\Users\Simon\Documents\Visual Studio 2013\Projects\GallerySite\Gallery.Web\bin\Owin.dll
+C:\Users\Simon\Documents\Visual Studio 2013\Projects\GallerySite\Gallery.Web\bin\System.Web.Helpers.dll
+C:\Users\Simon\Documents\Visual Studio 2013\Projects\GallerySite\Gallery.Web\bin\System.Web.Mvc.dll
+C:\Users\Simon\Documents\Visual Studio 2013\Projects\GallerySite\Gallery.Web\bin\System.Web.Optimization.dll
+C:\Users\Simon\Documents\Visual Studio 2013\Projects\GallerySite\Gallery.Web\bin\System.Web.Razor.dll
+C:\Users\Simon\Documents\Visual Studio 2013\Projects\GallerySite\Gallery.Web\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Simon\Documents\Visual Studio 2013\Projects\GallerySite\Gallery.Web\bin\System.Web.WebPages.dll
+C:\Users\Simon\Documents\Visual Studio 2013\Projects\GallerySite\Gallery.Web\bin\System.Web.WebPages.Razor.dll
+C:\Users\Simon\Documents\Visual Studio 2013\Projects\GallerySite\Gallery.Web\bin\WebGrease.dll
+C:\Users\Simon\Documents\Visual Studio 2013\Projects\GallerySite\Gallery.Web\bin\EntityFramework.xml
+C:\Users\Simon\Documents\Visual Studio 2013\Projects\GallerySite\Gallery.Web\bin\EntityFramework.SqlServer.xml
+C:\Users\Simon\Documents\Visual Studio 2013\Projects\GallerySite\Gallery.Web\bin\ImageResizer.xml
+C:\Users\Simon\Documents\Visual Studio 2013\Projects\GallerySite\Gallery.Web\bin\System.Web.Helpers.xml
+C:\Users\Simon\Documents\Visual Studio 2013\Projects\GallerySite\Gallery.Web\bin\System.Web.Mvc.xml
+C:\Users\Simon\Documents\Visual Studio 2013\Projects\GallerySite\Gallery.Web\bin\System.Web.Optimization.xml
+C:\Users\Simon\Documents\Visual Studio 2013\Projects\GallerySite\Gallery.Web\bin\System.Web.Razor.xml
+C:\Users\Simon\Documents\Visual Studio 2013\Projects\GallerySite\Gallery.Web\bin\System.Web.WebPages.xml
+C:\Users\Simon\Documents\Visual Studio 2013\Projects\GallerySite\Gallery.Web\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Simon\Documents\Visual Studio 2013\Projects\GallerySite\Gallery.Web\bin\System.Web.WebPages.Razor.xml
+C:\Users\Simon\Documents\Visual Studio 2013\Projects\GallerySite\Gallery.Web\bin\Antlr3.Runtime.pdb
+C:\Users\Simon\Documents\Visual Studio 2013\Projects\GallerySite\Gallery.Web\bin\Newtonsoft.Json.xml
+C:\Users\Simon\Documents\Visual Studio 2013\Projects\GallerySite\Gallery.Web\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Simon\Documents\Visual Studio 2013\Projects\GallerySite\Gallery.Web\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Simon\Documents\Visual Studio 2013\Projects\GallerySite\Gallery.Web\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Simon\Documents\Visual Studio 2013\Projects\GallerySite\Gallery.Web\bin\Microsoft.Owin.xml
+C:\Users\Simon\Documents\Visual Studio 2013\Projects\GallerySite\Gallery.Web\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Simon\Documents\Visual Studio 2013\Projects\GallerySite\Gallery.Web\bin\Microsoft.Owin.Security.xml
+C:\Users\Simon\Documents\Visual Studio 2013\Projects\GallerySite\Gallery.Web\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\Simon\Documents\Visual Studio 2013\Projects\GallerySite\Gallery.Web\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Simon\Documents\Visual Studio 2013\Projects\GallerySite\Gallery.Web\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Simon\Documents\Visual Studio 2013\Projects\GallerySite\Gallery.Web\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\Simon\Documents\Visual Studio 2013\Projects\GallerySite\Gallery.Web\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\Simon\Documents\Visual Studio 2013\Projects\GallerySite\Gallery.Web\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\Simon\Documents\Visual Studio 2013\Projects\GallerySite\Gallery.Web\obj\Debug\Gallery.Web.dll
+C:\Users\Simon\Documents\Visual Studio 2013\Projects\GallerySite\Gallery.Web\obj\Debug\Gallery.Web.pdb
+C:\Users\Simon\Documents\Visual Studio 2013\Projects\GallerySite\Gallery.Web\obj\Debug\Gallery.Web.csprojResolveAssemblyReference.cache
+C:\Users\Simon\Dropbox\Dev\Visual Studio 2013\Projects\GallerySite\Gallery.Web\bin\Gallery.Web.dll.config
+C:\Users\Simon\Dropbox\Dev\Visual Studio 2013\Projects\GallerySite\Gallery.Web\bin\Gallery.Web.dll
+C:\Users\Simon\Dropbox\Dev\Visual Studio 2013\Projects\GallerySite\Gallery.Web\bin\Gallery.Web.pdb
+C:\Users\Simon\Dropbox\Dev\Visual Studio 2013\Projects\GallerySite\Gallery.Web\bin\Antlr3.Runtime.dll
+C:\Users\Simon\Dropbox\Dev\Visual Studio 2013\Projects\GallerySite\Gallery.Web\bin\EntityFramework.dll
+C:\Users\Simon\Dropbox\Dev\Visual Studio 2013\Projects\GallerySite\Gallery.Web\bin\EntityFramework.SqlServer.dll
+C:\Users\Simon\Dropbox\Dev\Visual Studio 2013\Projects\GallerySite\Gallery.Web\bin\ImageResizer.dll
+C:\Users\Simon\Dropbox\Dev\Visual Studio 2013\Projects\GallerySite\Gallery.Web\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Simon\Dropbox\Dev\Visual Studio 2013\Projects\GallerySite\Gallery.Web\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Simon\Dropbox\Dev\Visual Studio 2013\Projects\GallerySite\Gallery.Web\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Simon\Dropbox\Dev\Visual Studio 2013\Projects\GallerySite\Gallery.Web\bin\Microsoft.Owin.dll
+C:\Users\Simon\Dropbox\Dev\Visual Studio 2013\Projects\GallerySite\Gallery.Web\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Simon\Dropbox\Dev\Visual Studio 2013\Projects\GallerySite\Gallery.Web\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Simon\Dropbox\Dev\Visual Studio 2013\Projects\GallerySite\Gallery.Web\bin\Microsoft.Owin.Security.dll
+C:\Users\Simon\Dropbox\Dev\Visual Studio 2013\Projects\GallerySite\Gallery.Web\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\Simon\Dropbox\Dev\Visual Studio 2013\Projects\GallerySite\Gallery.Web\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\Simon\Dropbox\Dev\Visual Studio 2013\Projects\GallerySite\Gallery.Web\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\Simon\Dropbox\Dev\Visual Studio 2013\Projects\GallerySite\Gallery.Web\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Simon\Dropbox\Dev\Visual Studio 2013\Projects\GallerySite\Gallery.Web\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\Simon\Dropbox\Dev\Visual Studio 2013\Projects\GallerySite\Gallery.Web\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Simon\Dropbox\Dev\Visual Studio 2013\Projects\GallerySite\Gallery.Web\bin\Newtonsoft.Json.dll
+C:\Users\Simon\Dropbox\Dev\Visual Studio 2013\Projects\GallerySite\Gallery.Web\bin\Owin.dll
+C:\Users\Simon\Dropbox\Dev\Visual Studio 2013\Projects\GallerySite\Gallery.Web\bin\System.Web.Helpers.dll
+C:\Users\Simon\Dropbox\Dev\Visual Studio 2013\Projects\GallerySite\Gallery.Web\bin\System.Web.Mvc.dll
+C:\Users\Simon\Dropbox\Dev\Visual Studio 2013\Projects\GallerySite\Gallery.Web\bin\System.Web.Optimization.dll
+C:\Users\Simon\Dropbox\Dev\Visual Studio 2013\Projects\GallerySite\Gallery.Web\bin\System.Web.Razor.dll
+C:\Users\Simon\Dropbox\Dev\Visual Studio 2013\Projects\GallerySite\Gallery.Web\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Simon\Dropbox\Dev\Visual Studio 2013\Projects\GallerySite\Gallery.Web\bin\System.Web.WebPages.dll
+C:\Users\Simon\Dropbox\Dev\Visual Studio 2013\Projects\GallerySite\Gallery.Web\bin\System.Web.WebPages.Razor.dll
+C:\Users\Simon\Dropbox\Dev\Visual Studio 2013\Projects\GallerySite\Gallery.Web\bin\WebGrease.dll
+C:\Users\Simon\Dropbox\Dev\Visual Studio 2013\Projects\GallerySite\Gallery.Web\bin\EntityFramework.xml
+C:\Users\Simon\Dropbox\Dev\Visual Studio 2013\Projects\GallerySite\Gallery.Web\bin\EntityFramework.SqlServer.xml
+C:\Users\Simon\Dropbox\Dev\Visual Studio 2013\Projects\GallerySite\Gallery.Web\bin\ImageResizer.xml
+C:\Users\Simon\Dropbox\Dev\Visual Studio 2013\Projects\GallerySite\Gallery.Web\bin\System.Web.Helpers.xml
+C:\Users\Simon\Dropbox\Dev\Visual Studio 2013\Projects\GallerySite\Gallery.Web\bin\System.Web.Mvc.xml
+C:\Users\Simon\Dropbox\Dev\Visual Studio 2013\Projects\GallerySite\Gallery.Web\bin\System.Web.Optimization.xml
+C:\Users\Simon\Dropbox\Dev\Visual Studio 2013\Projects\GallerySite\Gallery.Web\bin\System.Web.Razor.xml
+C:\Users\Simon\Dropbox\Dev\Visual Studio 2013\Projects\GallerySite\Gallery.Web\bin\System.Web.WebPages.xml
+C:\Users\Simon\Dropbox\Dev\Visual Studio 2013\Projects\GallerySite\Gallery.Web\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Simon\Dropbox\Dev\Visual Studio 2013\Projects\GallerySite\Gallery.Web\bin\System.Web.WebPages.Razor.xml
+C:\Users\Simon\Dropbox\Dev\Visual Studio 2013\Projects\GallerySite\Gallery.Web\bin\Antlr3.Runtime.pdb
+C:\Users\Simon\Dropbox\Dev\Visual Studio 2013\Projects\GallerySite\Gallery.Web\bin\Newtonsoft.Json.xml
+C:\Users\Simon\Dropbox\Dev\Visual Studio 2013\Projects\GallerySite\Gallery.Web\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Simon\Dropbox\Dev\Visual Studio 2013\Projects\GallerySite\Gallery.Web\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Simon\Dropbox\Dev\Visual Studio 2013\Projects\GallerySite\Gallery.Web\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Simon\Dropbox\Dev\Visual Studio 2013\Projects\GallerySite\Gallery.Web\bin\Microsoft.Owin.xml
+C:\Users\Simon\Dropbox\Dev\Visual Studio 2013\Projects\GallerySite\Gallery.Web\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Simon\Dropbox\Dev\Visual Studio 2013\Projects\GallerySite\Gallery.Web\bin\Microsoft.Owin.Security.xml
+C:\Users\Simon\Dropbox\Dev\Visual Studio 2013\Projects\GallerySite\Gallery.Web\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\Simon\Dropbox\Dev\Visual Studio 2013\Projects\GallerySite\Gallery.Web\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Simon\Dropbox\Dev\Visual Studio 2013\Projects\GallerySite\Gallery.Web\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Simon\Dropbox\Dev\Visual Studio 2013\Projects\GallerySite\Gallery.Web\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\Simon\Dropbox\Dev\Visual Studio 2013\Projects\GallerySite\Gallery.Web\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\Simon\Dropbox\Dev\Visual Studio 2013\Projects\GallerySite\Gallery.Web\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\Simon\Dropbox\Dev\Visual Studio 2013\Projects\GallerySite\Gallery.Web\obj\Debug\Gallery.Web.csprojResolveAssemblyReference.cache
+C:\Users\Simon\Dropbox\Dev\Visual Studio 2013\Projects\GallerySite\Gallery.Web\obj\Debug\Gallery.Web.dll
+C:\Users\Simon\Dropbox\Dev\Visual Studio 2013\Projects\GallerySite\Gallery.Web\obj\Debug\Gallery.Web.pdb
+C:\Repo\GallerySite\Gallery.Web\bin\Gallery.Web.dll.config
+C:\Repo\GallerySite\Gallery.Web\bin\Gallery.Web.dll
+C:\Repo\GallerySite\Gallery.Web\bin\Gallery.Web.pdb
+C:\Repo\GallerySite\Gallery.Web\bin\Antlr3.Runtime.dll
+C:\Repo\GallerySite\Gallery.Web\bin\EntityFramework.dll
+C:\Repo\GallerySite\Gallery.Web\bin\EntityFramework.SqlServer.dll
+C:\Repo\GallerySite\Gallery.Web\bin\ImageResizer.dll
+C:\Repo\GallerySite\Gallery.Web\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Repo\GallerySite\Gallery.Web\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Repo\GallerySite\Gallery.Web\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Repo\GallerySite\Gallery.Web\bin\Microsoft.Owin.dll
+C:\Repo\GallerySite\Gallery.Web\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Repo\GallerySite\Gallery.Web\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Repo\GallerySite\Gallery.Web\bin\Microsoft.Owin.Security.dll
+C:\Repo\GallerySite\Gallery.Web\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Repo\GallerySite\Gallery.Web\bin\Microsoft.Owin.Security.Google.dll
+C:\Repo\GallerySite\Gallery.Web\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Repo\GallerySite\Gallery.Web\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Repo\GallerySite\Gallery.Web\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Repo\GallerySite\Gallery.Web\bin\Microsoft.Web.Infrastructure.dll
+C:\Repo\GallerySite\Gallery.Web\bin\Newtonsoft.Json.dll
+C:\Repo\GallerySite\Gallery.Web\bin\Owin.dll
+C:\Repo\GallerySite\Gallery.Web\bin\System.Web.Helpers.dll
+C:\Repo\GallerySite\Gallery.Web\bin\System.Web.Mvc.dll
+C:\Repo\GallerySite\Gallery.Web\bin\System.Web.Optimization.dll
+C:\Repo\GallerySite\Gallery.Web\bin\System.Web.Razor.dll
+C:\Repo\GallerySite\Gallery.Web\bin\System.Web.WebPages.Deployment.dll
+C:\Repo\GallerySite\Gallery.Web\bin\System.Web.WebPages.dll
+C:\Repo\GallerySite\Gallery.Web\bin\System.Web.WebPages.Razor.dll
+C:\Repo\GallerySite\Gallery.Web\bin\WebGrease.dll
+C:\Repo\GallerySite\Gallery.Web\bin\EntityFramework.xml
+C:\Repo\GallerySite\Gallery.Web\bin\EntityFramework.SqlServer.xml
+C:\Repo\GallerySite\Gallery.Web\bin\ImageResizer.xml
+C:\Repo\GallerySite\Gallery.Web\bin\System.Web.Helpers.xml
+C:\Repo\GallerySite\Gallery.Web\bin\System.Web.Mvc.xml
+C:\Repo\GallerySite\Gallery.Web\bin\System.Web.Optimization.xml
+C:\Repo\GallerySite\Gallery.Web\bin\System.Web.Razor.xml
+C:\Repo\GallerySite\Gallery.Web\bin\System.Web.WebPages.xml
+C:\Repo\GallerySite\Gallery.Web\bin\System.Web.WebPages.Deployment.xml
+C:\Repo\GallerySite\Gallery.Web\bin\System.Web.WebPages.Razor.xml
+C:\Repo\GallerySite\Gallery.Web\bin\Antlr3.Runtime.pdb
+C:\Repo\GallerySite\Gallery.Web\bin\Newtonsoft.Json.xml
+C:\Repo\GallerySite\Gallery.Web\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Repo\GallerySite\Gallery.Web\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Repo\GallerySite\Gallery.Web\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Repo\GallerySite\Gallery.Web\bin\Microsoft.Owin.xml
+C:\Repo\GallerySite\Gallery.Web\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Repo\GallerySite\Gallery.Web\bin\Microsoft.Owin.Security.xml
+C:\Repo\GallerySite\Gallery.Web\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Repo\GallerySite\Gallery.Web\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Repo\GallerySite\Gallery.Web\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Repo\GallerySite\Gallery.Web\bin\Microsoft.Owin.Security.Google.xml
+C:\Repo\GallerySite\Gallery.Web\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Repo\GallerySite\Gallery.Web\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Repo\GallerySite\Gallery.Web\obj\Debug\Gallery.Web.csprojResolveAssemblyReference.cache
+C:\Repo\GallerySite\Gallery.Web\obj\Debug\Gallery.Web.dll
+C:\Repo\GallerySite\Gallery.Web\obj\Debug\Gallery.Web.pdb

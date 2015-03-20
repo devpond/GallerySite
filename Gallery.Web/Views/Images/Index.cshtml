@@ -1,0 +1,25 @@
+﻿@model IEnumerable<Gallery.Web.image>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@if (Model != null) { 
+foreach (var item in Model) {
+    var img = item.site_locations.Location + item.Filename;
+    var loc = item.site_locations.Location;
+    <div class="singleImage">
+        <img src="@img" />
+        <br />
+        @img
+        <br />
+    </div>
+            
+        
+    }
+}
+else
+{
+    <h1>Nothing to see!</h1>
+}
+

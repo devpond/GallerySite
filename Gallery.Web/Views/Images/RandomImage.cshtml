@@ -1,0 +1,15 @@
+﻿@model Gallery.Web.ViewAllImage
+
+<div class="RandomImage">
+    @if (Model != null)
+    {
+        var item = Model;
+        var img = item.Location + item.Filename;
+        <h2>@item.Name</h2>
+        <img src ="@img"/>
+    }
+    else
+    {
+  <h1>Nothing to see!</h1>
+    }
+</div>

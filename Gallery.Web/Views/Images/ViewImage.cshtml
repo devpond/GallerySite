@@ -1,0 +1,19 @@
+﻿@model Gallery.Web.ViewAllImage
+
+@{
+    ViewBag.Title = "ViewImage";
+}
+
+<h2>ViewImage</h2>
+@if (Model != null)
+{
+    var selImage = Model.Location + Model.Filename;
+    
+    <img src="@selImage"/>
+
+
+}
+else
+{
+   <h2>Nothing to see!</h2>
+}

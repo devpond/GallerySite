@@ -1,0 +1,36 @@
+﻿@using System.Web.Mvc.Html
+@model IEnumerable<Gallery.Web.ViewSubjectImage>
+
+@{
+    ViewBag.Title = "ShowImage";
+}
+
+@if (Model != null)
+{
+    using (Html.BeginForm("ShowImage","Images"))
+    {
+        @*Html.DropDownList("SubjectList", null, new { @name = "imgSelection", onchange = "submit()"}); *@
+        @Html.DropDownList("subjectList")
+        <input type='submit' value='Submit' />
+    }
+    
+    foreach (var item in Model)
+    {
+        const string imgSetting = "?height=180";
+        var img = item.Location + item.Filename;
+        var imgSmall = img + imgSetting;
+        //var img = item.Filename;
+        //var loc = "/Assets/Images/" + img;
+        <div class="singleImage">
+            <a href="@img">
+            @item.Name<br/>
+            <img src="@imgSmall" />
+                </a>
+                <br/>
+        </div>
+    }
+}
+else
+{
+    <h1>Nothing to see!</h1>
+}

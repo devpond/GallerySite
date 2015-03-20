@@ -1,0 +1,33 @@
+﻿@using Microsoft.Ajax.Utilities
+@model IEnumerable<Gallery.Web.ViewGalleryImage>
+
+@{
+    ViewBag.Title = "ViewGallery";
+}
+
+<h2>@ViewBag.galleryName</h2>
+<h3>Averate Rating: @ViewBag.galleryRating</h3>
+<p>Likes: @ViewBag.galleryUpVotes</p>
+<p>Dislikes: @ViewBag.galleryDownVotes</p>
+<br/><br/>
+@try
+{
+    var galId = ViewBag.galleryId;
+    @Html.RenderPartial("_GalleryRateControl", @Model.)
+} catch (Exception){;}
+
+@if (Model != null)
+{
+    foreach (var item in Model)
+    {
+        if (item.IsHidden != 1)
+        {
+            var imgLink = item.Location + item.Filename;
+            var img = item.Location + item.Filename + "?w=200&h=300&mode=crop";
+            
+            <a href ="@Url.Action("ViewImage", "Images", new { Id =item.ImageID }, null)">
+            <img src="@img"/>
+                </a>
+        }
+    }
+}

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f48ec5144cee4bf2b2ae82cb33d61580" Name="Diagram1">
+        <EntityTypeShape EntityType="GalleryDbModel.C__MigrationHistory" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GalleryDbModel.AspNetRole" Width="1.5" PointX="0.75" PointY="29.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="GalleryDbModel.AspNetUserClaim" Width="1.5" PointX="5.25" PointY="26.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="GalleryDbModel.AspNetUserLogin" Width="1.5" PointX="5.25" PointY="29" IsExpanded="true" />
+        <EntityTypeShape EntityType="GalleryDbModel.AspNetUser" Width="1.5" PointX="3" PointY="27.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="GalleryDbModel.category" Width="1.5" PointX="8.25" PointY="20.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="GalleryDbModel.comment" Width="1.5" PointX="5.25" PointY="31.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="GalleryDbModel.gallery" Width="1.5" PointX="7.5" PointY="28.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GalleryDbModel.gallery_reports" Width="1.5" PointX="9.75" PointY="24.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="GalleryDbModel.image" Width="1.5" PointX="10.5" PointY="28" IsExpanded="true" />
+        <EntityTypeShape EntityType="GalleryDbModel.image_reports" Width="1.5" PointX="15.75" PointY="29.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="GalleryDbModel.report_types" Width="1.5" PointX="13.5" PointY="19" IsExpanded="true" />
+        <EntityTypeShape EntityType="GalleryDbModel.site_locations" Width="1.5" PointX="8.25" PointY="39.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="GalleryDbModel.subject" Width="1.5" PointX="12.75" PointY="28.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="GalleryDbModel.subject_external_links" Width="1.5" PointX="18" PointY="33.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="GalleryDbModel.subject_external_links_type" Width="1.5" PointX="15.75" PointY="23.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="GalleryDbModel.subject_reports" Width="1.5" PointX="18" PointY="25.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="GalleryDbModel.sysdiagram" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GalleryDbModel.thumbnail" Width="1.5" PointX="15.75" PointY="26" IsExpanded="true" />
+        <EntityTypeShape EntityType="GalleryDbModel.vote_type" Width="1.5" PointX="10.5" PointY="21.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="GalleryDbModel.gallery_images" Width="1.5" PointX="18.75" PointY="29.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GalleryDbModel.gallery_ratings" Width="1.5" PointX="9.75" PointY="37.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="GalleryDbModel.gallery_votes" Width="1.5" PointX="12.75" PointY="22.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="GalleryDbModel.image_ratings" Width="1.5" PointX="12.75" PointY="37.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="GalleryDbModel.image_tags" Width="1.5" PointX="15.75" PointY="34" IsExpanded="true" />
+        <EntityTypeShape EntityType="GalleryDbModel.image_votes" Width="1.5" PointX="12.75" PointY="25.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="GalleryDbModel.naming_corrections" Width="1.5" PointX="21" PointY="29.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="GalleryDbModel.subject_alias" Width="1.5" PointX="15" PointY="39.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="GalleryDbModel.subject_rating" Width="1.5" PointX="15" PointY="41.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="GalleryDbModel.subject_votes" Width="1.5" PointX="18" PointY="36.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="GalleryDbModel.ViewAllGallery" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GalleryDbModel.ViewAllImage" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GalleryDbModel.ViewGalleryImage" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GalleryDbModel.ViewGalleryRating" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GalleryDbModel.ViewGalleryVote" Width="1.5" PointX="6.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GalleryDbModel.ViewImageVote" Width="1.5" PointX="4.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GalleryDbModel.ViewSubjectImage" Width="1.5" PointX="6.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GalleryDbModel.ViewSubjectNamesAndId" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GalleryDbModel.ViewSubjectVote" Width="1.5" PointX="0.75" PointY="8.75" IsExpanded="true" />
+        <AssociationConnector Association="GalleryDbModel.FK_subjects_AspNetRoles" ManuallyRouted="false" />
+        <AssociationConnector Association="GalleryDbModel.galleries_fk_gallery_roles" ManuallyRouted="false" />
+        <AssociationConnector Association="GalleryDbModel.images_fk_images_roles" ManuallyRouted="false" />
+        <AssociationConnector Association="GalleryDbModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="GalleryDbModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="GalleryDbModel.comments_fk_comments_users" ManuallyRouted="false" />
+        <AssociationConnector Association="GalleryDbModel.FK_naming_corrections_AspNetUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="GalleryDbModel.galleries_fk_gallery_users" ManuallyRouted="false" />
+        <AssociationConnector Association="GalleryDbModel.gallery_images_fk_galleryimages_users" ManuallyRouted="false" />
+        <AssociationConnector Association="GalleryDbModel.gallery_reports_fk_galleryreports_users" ManuallyRouted="false" />
+        <AssociationConnector Association="GalleryDbModel.image_tags_fk_imagetags_users" ManuallyRouted="false" />
+        <AssociationConnector Association="GalleryDbModel.images_k_images_users" ManuallyRouted="false" />
+        <AssociationConnector Association="GalleryDbModel.images_reports_fk_imagesreports_users" ManuallyRouted="false" />
+        <AssociationConnector Association="GalleryDbModel.subject_reports_fk_subjectreports_users" ManuallyRouted="false" />
+        <AssociationConnector Association="GalleryDbModel.subjects_fk_subject_users" ManuallyRouted="false" />
+        <AssociationConnector Association="GalleryDbModel.gallery_images_fk_galleryimages_galleries" ManuallyRouted="false" />
+        <AssociationConnector Association="GalleryDbModel.gallery_ratings_fk_galleryrating_gallery" ManuallyRouted="false" />
+        <AssociationConnector Association="GalleryDbModel.gallery_reports_fk_galleryreports_gallery" ManuallyRouted="false" />
+        <AssociationConnector Association="GalleryDbModel.gallery_votes_fk_galleryvotes_galleries" ManuallyRouted="false" />
+        <AssociationConnector Association="GalleryDbModel.naming_corrections_fk_namingcorrections_galleries" ManuallyRouted="false" />
+        <AssociationConnector Association="GalleryDbModel.gallery_reports_fk_galleryreports_reporttypes" ManuallyRouted="false" />
+        <AssociationConnector Association="GalleryDbModel.gallery_images_fk_galleryimages_images" ManuallyRouted="false" />
+        <AssociationConnector Association="GalleryDbModel.image_tags_fk_imagetags_images" ManuallyRouted="false" />
+        <AssociationConnector Association="GalleryDbModel.images_fk_images_locations" ManuallyRouted="false" />
+        <AssociationConnector Association="GalleryDbModel.images_ratings_fk_imagesratings_images" ManuallyRouted="false" />
+        <AssociationConnector Association="GalleryDbModel.images_reports_fk_imagesreports_images" ManuallyRouted="false" />
+        <AssociationConnector Association="GalleryDbModel.images_votes_fk_imagesvotes_images" ManuallyRouted="false" />
+        <AssociationConnector Association="GalleryDbModel.naming_corrections_fk_namingcorrections_images" ManuallyRouted="false" />
+        <AssociationConnector Association="GalleryDbModel.subjects_fk_subject_images" ManuallyRouted="false" />
+        <AssociationConnector Association="GalleryDbModel.thumbnails_fk_thumbnails_images" ManuallyRouted="false" />
+        <AssociationConnector Association="GalleryDbModel.images_reports_fk_imagesreports_reporttype" ManuallyRouted="false" />
+        <AssociationConnector Association="GalleryDbModel.subject_reports_fk_subjectreports_reporttypes" ManuallyRouted="false" />
+        <AssociationConnector Association="GalleryDbModel.thumbnails_fk_thumbnails_locations" ManuallyRouted="false" />
+        <AssociationConnector Association="GalleryDbModel.naming_corrections_fk_namingcorrections_subjects" ManuallyRouted="false" />
+        <AssociationConnector Association="GalleryDbModel.subject_alias_fk_subjectalias_subjects" ManuallyRouted="false" />
+        <AssociationConnector Association="GalleryDbModel.subject_external_links_fk_eternallinks_subject" ManuallyRouted="false" />
+        <AssociationConnector Association="GalleryDbModel.subject_rating_fk_subjectrating_subject" ManuallyRouted="false" />
+        <AssociationConnector Association="GalleryDbModel.subject_reports_fk_subjectreports_subject" ManuallyRouted="false" />
+        <AssociationConnector Association="GalleryDbModel.subject_votes_fk_subjectvotes_subject" ManuallyRouted="false" />
+        <AssociationConnector Association="GalleryDbModel.subject_external_links_fk_subjectexternallinks_subjectexternallinkstype" ManuallyRouted="false" />
+        <AssociationConnector Association="GalleryDbModel.FK_gallery_votes_vote_type" ManuallyRouted="false" />
+        <AssociationConnector Association="GalleryDbModel.FK_image_votes_vote_type" ManuallyRouted="false" />
+        <AssociationConnector Association="GalleryDbModel.FK_subject_votes_vote_type" ManuallyRouted="false" />
+        <AssociationConnector Association="GalleryDbModel.AspNetUserRoles" ManuallyRouted="false" />
+        <AssociationConnector Association="GalleryDbModel.comment_replies" ManuallyRouted="false" />
+        <AssociationConnector Association="GalleryDbModel.gallery_categories" ManuallyRouted="false" />
+        <AssociationConnector Association="GalleryDbModel.gallery_comments" ManuallyRouted="false" />
+        <AssociationConnector Association="GalleryDbModel.gallery_subjects" ManuallyRouted="false" />
+        <AssociationConnector Association="GalleryDbModel.image_categories" ManuallyRouted="false" />
+        <AssociationConnector Association="GalleryDbModel.image_comments" ManuallyRouted="false" />
+        <AssociationConnector Association="GalleryDbModel.subject_categories" ManuallyRouted="false" />
+        <AssociationConnector Association="GalleryDbModel.subject_comments" ManuallyRouted="false" />
+        <AssociationConnector Association="GalleryDbModel.subject_images" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

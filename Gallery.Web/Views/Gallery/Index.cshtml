@@ -1,0 +1,13 @@
+﻿@model IEnumerable<ViewAllGallery>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@foreach (var item in Model)
+{
+    @Html.DisplayNameFor(x => x.GalleryName)<br/>
+    @Html.DisplayFor(x => item.GalleryName)<br/>
+    @Html.ActionLink("View", "ViewGallery", new { id = item.GalleryID })<br/>
+}

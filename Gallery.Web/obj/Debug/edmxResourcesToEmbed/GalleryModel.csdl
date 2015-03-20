@@ -1,0 +1,1440 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="GalleryDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="C__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+      <PropertyRef Name="ContextKey" />
+    </Key>
+    <Property Name="MigrationId" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ContextKey" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Model" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+    <Property Name="ProductVersion" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetRole">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="subjects" Relationship="Self.FK_subjects_AspNetRoles" FromRole="AspNetRoles" ToRole="subject" />
+    <NavigationProperty Name="galleries" Relationship="Self.galleries_fk_gallery_roles" FromRole="AspNetRoles" ToRole="gallery" />
+    <NavigationProperty Name="images" Relationship="Self.images_fk_images_roles" FromRole="AspNetRoles" ToRole="image" />
+    <NavigationProperty Name="AspNetUsers" Relationship="Self.AspNetUserRoles" FromRole="AspNetRoles" ToRole="AspNetUsers" />
+  </EntityType>
+  <EntityType Name="AspNetUserClaim">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ClaimType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ClaimValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="AspNetUser" Relationship="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUserClaims" ToRole="AspNetUsers" />
+  </EntityType>
+  <EntityType Name="AspNetUserLogin">
+    <Key>
+      <PropertyRef Name="LoginProvider" />
+      <PropertyRef Name="ProviderKey" />
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="LoginProvider" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ProviderKey" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="AspNetUser" Relationship="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUserLogins" ToRole="AspNetUsers" />
+  </EntityType>
+  <EntityType Name="AspNetUser">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="EmailConfirmed" Type="Boolean" Nullable="false" />
+    <Property Name="PasswordHash" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SecurityStamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumberConfirmed" Type="Boolean" Nullable="false" />
+    <Property Name="TwoFactorEnabled" Type="Boolean" Nullable="false" />
+    <Property Name="LockoutEndDateUtc" Type="DateTime" Precision="3" />
+    <Property Name="LockoutEnabled" Type="Boolean" Nullable="false" />
+    <Property Name="AccessFailedCount" Type="Int32" Nullable="false" />
+    <Property Name="UserName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DateOfBirth" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="AspNetUserClaims" Relationship="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserClaims" />
+    <NavigationProperty Name="AspNetUserLogins" Relationship="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserLogins" />
+    <NavigationProperty Name="comments" Relationship="Self.comments_fk_comments_users" FromRole="AspNetUsers" ToRole="comments" />
+    <NavigationProperty Name="naming_corrections" Relationship="Self.FK_naming_corrections_AspNetUsers" FromRole="AspNetUsers" ToRole="naming_corrections" />
+    <NavigationProperty Name="galleries" Relationship="Self.galleries_fk_gallery_users" FromRole="AspNetUsers" ToRole="gallery" />
+    <NavigationProperty Name="gallery_images" Relationship="Self.gallery_images_fk_galleryimages_users" FromRole="AspNetUsers" ToRole="gallery_images" />
+    <NavigationProperty Name="gallery_reports" Relationship="Self.gallery_reports_fk_galleryreports_users" FromRole="AspNetUsers" ToRole="gallery_reports" />
+    <NavigationProperty Name="image_tags" Relationship="Self.image_tags_fk_imagetags_users" FromRole="AspNetUsers" ToRole="image_tags" />
+    <NavigationProperty Name="images" Relationship="Self.images_k_images_users" FromRole="AspNetUsers" ToRole="image" />
+    <NavigationProperty Name="image_reports" Relationship="Self.images_reports_fk_imagesreports_users" FromRole="AspNetUsers" ToRole="image_reports" />
+    <NavigationProperty Name="subject_reports" Relationship="Self.subject_reports_fk_subjectreports_users" FromRole="AspNetUsers" ToRole="subject_reports" />
+    <NavigationProperty Name="subjects" Relationship="Self.subjects_fk_subject_users" FromRole="AspNetUsers" ToRole="subject" />
+    <NavigationProperty Name="AspNetRoles" Relationship="Self.AspNetUserRoles" FromRole="AspNetUsers" ToRole="AspNetRoles" />
+  </EntityType>
+  <EntityType Name="category">
+    <Key>
+      <PropertyRef Name="CategoryID" />
+    </Key>
+    <Property Name="CategoryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryName" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AgeRestricted" Type="Int16" Nullable="false" />
+    <NavigationProperty Name="galleries" Relationship="Self.gallery_categories" FromRole="category" ToRole="gallery" />
+    <NavigationProperty Name="images" Relationship="Self.image_categories" FromRole="category" ToRole="image" />
+    <NavigationProperty Name="subjects" Relationship="Self.subject_categories" FromRole="category" ToRole="subject" />
+  </EntityType>
+  <EntityType Name="comment">
+    <Key>
+      <PropertyRef Name="CommentID" />
+    </Key>
+    <Property Name="CommentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserID" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="IsReported" Type="Int16" Nullable="false" />
+    <Property Name="Comment1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IsHidden" Type="Int16" Nullable="false" />
+    <NavigationProperty Name="AspNetUser" Relationship="Self.comments_fk_comments_users" FromRole="comments" ToRole="AspNetUsers" />
+    <NavigationProperty Name="comments1" Relationship="Self.comment_replies" FromRole="comments" ToRole="comments1" />
+    <NavigationProperty Name="comments" Relationship="Self.comment_replies" FromRole="comments1" ToRole="comments" />
+    <NavigationProperty Name="galleries" Relationship="Self.gallery_comments" FromRole="comments" ToRole="gallery" />
+    <NavigationProperty Name="images" Relationship="Self.image_comments" FromRole="comments" ToRole="image" />
+    <NavigationProperty Name="subjects" Relationship="Self.subject_comments" FromRole="comments" ToRole="subject" />
+  </EntityType>
+  <EntityType Name="gallery">
+    <Key>
+      <PropertyRef Name="GalleryID" />
+    </Key>
+    <Property Name="GalleryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="GalleryName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="DateCreated" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="DateLastModified" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="CreatedBy" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="TimesViewed" Type="Int64" Nullable="false" />
+    <Property Name="Reported" Type="Int16" Nullable="false" />
+    <Property Name="PermissionLevel" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="AgeRestricted" Type="Int16" Nullable="false" />
+    <Property Name="IsHidden" Type="Int16" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="AspNetRole" Relationship="Self.galleries_fk_gallery_roles" FromRole="gallery" ToRole="AspNetRoles" />
+    <NavigationProperty Name="AspNetUser" Relationship="Self.galleries_fk_gallery_users" FromRole="gallery" ToRole="AspNetUsers" />
+    <NavigationProperty Name="gallery_images" Relationship="Self.gallery_images_fk_galleryimages_galleries" FromRole="gallery" ToRole="gallery_images" />
+    <NavigationProperty Name="gallery_ratings" Relationship="Self.gallery_ratings_fk_galleryrating_gallery" FromRole="gallery" ToRole="gallery_ratings" />
+    <NavigationProperty Name="gallery_reports" Relationship="Self.gallery_reports_fk_galleryreports_gallery" FromRole="gallery" ToRole="gallery_reports" />
+    <NavigationProperty Name="gallery_votes" Relationship="Self.gallery_votes_fk_galleryvotes_galleries" FromRole="gallery" ToRole="gallery_votes" />
+    <NavigationProperty Name="naming_corrections" Relationship="Self.naming_corrections_fk_namingcorrections_galleries" FromRole="gallery" ToRole="naming_corrections" />
+    <NavigationProperty Name="categories" Relationship="Self.gallery_categories" FromRole="gallery" ToRole="category" />
+    <NavigationProperty Name="comments" Relationship="Self.gallery_comments" FromRole="gallery" ToRole="comments" />
+    <NavigationProperty Name="subjects" Relationship="Self.gallery_subjects" FromRole="gallery" ToRole="subject" />
+  </EntityType>
+  <EntityType Name="gallery_reports">
+    <Key>
+      <PropertyRef Name="GalleryReportID" />
+    </Key>
+    <Property Name="GalleryReportID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="GalleryID" Type="Int32" Nullable="false" />
+    <Property Name="ReportedBy" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Type" Type="Int32" Nullable="false" />
+    <Property Name="ReportDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Comments" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="AspNetUser" Relationship="Self.gallery_reports_fk_galleryreports_users" FromRole="gallery_reports" ToRole="AspNetUsers" />
+    <NavigationProperty Name="gallery" Relationship="Self.gallery_reports_fk_galleryreports_gallery" FromRole="gallery_reports" ToRole="gallery" />
+    <NavigationProperty Name="report_types" Relationship="Self.gallery_reports_fk_galleryreports_reporttypes" FromRole="gallery_reports" ToRole="report_types" />
+  </EntityType>
+  <EntityType Name="image">
+    <Key>
+      <PropertyRef Name="ImageID" />
+    </Key>
+    <Property Name="ImageID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LocationID" Type="Int32" Nullable="false" />
+    <Property Name="Filename" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DateAdded" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="AddedBy" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Reported" Type="Int16" Nullable="false" />
+    <Property Name="PermissionLevel" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="AgeRestricted" Type="Int16" Nullable="false" />
+    <Property Name="FileType" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="IsHidden" Type="Int16" Nullable="false" />
+    <Property Name="Width" Type="Int32" />
+    <Property Name="Height" Type="Int32" />
+    <Property Name="Orientation" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="AspNetRole" Relationship="Self.images_fk_images_roles" FromRole="image" ToRole="AspNetRoles" />
+    <NavigationProperty Name="AspNetUser" Relationship="Self.images_k_images_users" FromRole="image" ToRole="AspNetUsers" />
+    <NavigationProperty Name="gallery_images" Relationship="Self.gallery_images_fk_galleryimages_images" FromRole="image" ToRole="gallery_images" />
+    <NavigationProperty Name="image_tags" Relationship="Self.image_tags_fk_imagetags_images" FromRole="image" ToRole="image_tags" />
+    <NavigationProperty Name="site_locations" Relationship="Self.images_fk_images_locations" FromRole="image" ToRole="site_locations" />
+    <NavigationProperty Name="image_ratings" Relationship="Self.images_ratings_fk_imagesratings_images" FromRole="image" ToRole="image_ratings" />
+    <NavigationProperty Name="image_reports" Relationship="Self.images_reports_fk_imagesreports_images" FromRole="image" ToRole="image_reports" />
+    <NavigationProperty Name="image_votes" Relationship="Self.images_votes_fk_imagesvotes_images" FromRole="image" ToRole="image_votes" />
+    <NavigationProperty Name="naming_corrections" Relationship="Self.naming_corrections_fk_namingcorrections_images" FromRole="image" ToRole="naming_corrections" />
+    <NavigationProperty Name="subjects" Relationship="Self.subjects_fk_subject_images" FromRole="image" ToRole="subject" />
+    <NavigationProperty Name="thumbnails" Relationship="Self.thumbnails_fk_thumbnails_images" FromRole="image" ToRole="thumbnails" />
+    <NavigationProperty Name="categories" Relationship="Self.image_categories" FromRole="image" ToRole="category" />
+    <NavigationProperty Name="comments" Relationship="Self.image_comments" FromRole="image" ToRole="comments" />
+    <NavigationProperty Name="subjects1" Relationship="Self.subject_images" FromRole="image" ToRole="subject" />
+  </EntityType>
+  <EntityType Name="image_reports">
+    <Key>
+      <PropertyRef Name="ImageReportID" />
+    </Key>
+    <Property Name="ImageReportID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ImageID" Type="Int32" Nullable="false" />
+    <Property Name="ReportedBy" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Type" Type="Int32" Nullable="false" />
+    <Property Name="ReportDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Comments" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="AspNetUser" Relationship="Self.images_reports_fk_imagesreports_users" FromRole="image_reports" ToRole="AspNetUsers" />
+    <NavigationProperty Name="image" Relationship="Self.images_reports_fk_imagesreports_images" FromRole="image_reports" ToRole="image" />
+    <NavigationProperty Name="report_types" Relationship="Self.images_reports_fk_imagesreports_reporttype" FromRole="image_reports" ToRole="report_types" />
+  </EntityType>
+  <EntityType Name="report_types">
+    <Key>
+      <PropertyRef Name="ReportTypeId" />
+    </Key>
+    <Property Name="ReportTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Type" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="gallery_reports" Relationship="Self.gallery_reports_fk_galleryreports_reporttypes" FromRole="report_types" ToRole="gallery_reports" />
+    <NavigationProperty Name="image_reports" Relationship="Self.images_reports_fk_imagesreports_reporttype" FromRole="report_types" ToRole="image_reports" />
+    <NavigationProperty Name="subject_reports" Relationship="Self.subject_reports_fk_subjectreports_reporttypes" FromRole="report_types" ToRole="subject_reports" />
+  </EntityType>
+  <EntityType Name="site_locations">
+    <Key>
+      <PropertyRef Name="LocationID" />
+    </Key>
+    <Property Name="LocationID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Location" Type="String" MaxLength="400" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="images" Relationship="Self.images_fk_images_locations" FromRole="site_locations" ToRole="image" />
+    <NavigationProperty Name="thumbnails" Relationship="Self.thumbnails_fk_thumbnails_locations" FromRole="site_locations" ToRole="thumbnails" />
+  </EntityType>
+  <EntityType Name="subject">
+    <Key>
+      <PropertyRef Name="SubjectID" />
+    </Key>
+    <Property Name="SubjectID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="DateOfBirth" Type="DateTime" Precision="0" />
+    <Property Name="Country" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Nationality" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DateCreated" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="AddedBy" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="Reported" Type="Int16" Nullable="false" />
+    <Property Name="ProfilePicId" Type="Int32" />
+    <Property Name="PermissionLevel" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="AgeRestricted" Type="Int16" Nullable="false" />
+    <Property Name="IsHidden" Type="Int16" Nullable="false" />
+    <NavigationProperty Name="AspNetRole" Relationship="Self.FK_subjects_AspNetRoles" FromRole="subject" ToRole="AspNetRoles" />
+    <NavigationProperty Name="AspNetUser" Relationship="Self.subjects_fk_subject_users" FromRole="subject" ToRole="AspNetUsers" />
+    <NavigationProperty Name="image" Relationship="Self.subjects_fk_subject_images" FromRole="subject" ToRole="image" />
+    <NavigationProperty Name="naming_corrections" Relationship="Self.naming_corrections_fk_namingcorrections_subjects" FromRole="subject" ToRole="naming_corrections" />
+    <NavigationProperty Name="subject_alias" Relationship="Self.subject_alias_fk_subjectalias_subjects" FromRole="subject" ToRole="subject_alias" />
+    <NavigationProperty Name="subject_external_links" Relationship="Self.subject_external_links_fk_eternallinks_subject" FromRole="subject" ToRole="subject_external_links" />
+    <NavigationProperty Name="subject_rating" Relationship="Self.subject_rating_fk_subjectrating_subject" FromRole="subject" ToRole="subject_rating" />
+    <NavigationProperty Name="subject_reports" Relationship="Self.subject_reports_fk_subjectreports_subject" FromRole="subject" ToRole="subject_reports" />
+    <NavigationProperty Name="subject_votes" Relationship="Self.subject_votes_fk_subjectvotes_subject" FromRole="subject" ToRole="subject_votes" />
+    <NavigationProperty Name="galleries" Relationship="Self.gallery_subjects" FromRole="subject" ToRole="gallery" />
+    <NavigationProperty Name="categories" Relationship="Self.subject_categories" FromRole="subject" ToRole="category" />
+    <NavigationProperty Name="comments" Relationship="Self.subject_comments" FromRole="subject" ToRole="comments" />
+    <NavigationProperty Name="images" Relationship="Self.subject_images" FromRole="subject" ToRole="image" />
+  </EntityType>
+  <EntityType Name="subject_external_links">
+    <Key>
+      <PropertyRef Name="LinkID" />
+    </Key>
+    <Property Name="LinkID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SubjectID" Type="Int32" Nullable="false" />
+    <Property Name="URL" Type="String" MaxLength="3000" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Type" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="subject" Relationship="Self.subject_external_links_fk_eternallinks_subject" FromRole="subject_external_links" ToRole="subject" />
+    <NavigationProperty Name="subject_external_links_type" Relationship="Self.subject_external_links_fk_subjectexternallinks_subjectexternallinkstype" FromRole="subject_external_links" ToRole="subject_external_links_type" />
+  </EntityType>
+  <EntityType Name="subject_external_links_type">
+    <Key>
+      <PropertyRef Name="LinkTypeID" />
+    </Key>
+    <Property Name="LinkTypeID" Type="Int32" Nullable="false" />
+    <Property Name="Type" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="subject_external_links" Relationship="Self.subject_external_links_fk_subjectexternallinks_subjectexternallinkstype" FromRole="subject_external_links_type" ToRole="subject_external_links" />
+  </EntityType>
+  <EntityType Name="subject_reports">
+    <Key>
+      <PropertyRef Name="SubjectReportID" />
+    </Key>
+    <Property Name="SubjectReportID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SubjectID" Type="Int32" Nullable="false" />
+    <Property Name="ReportedBy" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Type" Type="Int32" Nullable="false" />
+    <Property Name="ReportDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Comments" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="AspNetUser" Relationship="Self.subject_reports_fk_subjectreports_users" FromRole="subject_reports" ToRole="AspNetUsers" />
+    <NavigationProperty Name="report_types" Relationship="Self.subject_reports_fk_subjectreports_reporttypes" FromRole="subject_reports" ToRole="report_types" />
+    <NavigationProperty Name="subject" Relationship="Self.subject_reports_fk_subjectreports_subject" FromRole="subject_reports" ToRole="subject" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="thumbnail">
+    <Key>
+      <PropertyRef Name="ThumbnailID" />
+    </Key>
+    <Property Name="ThumbnailID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LocationID" Type="Int32" Nullable="false" />
+    <Property Name="Filename" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MainImageID" Type="Int32" Nullable="false" />
+    <Property Name="FileType" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="IsHidden" Type="Int16" Nullable="false" />
+    <NavigationProperty Name="image" Relationship="Self.thumbnails_fk_thumbnails_images" FromRole="thumbnails" ToRole="image" />
+    <NavigationProperty Name="site_locations" Relationship="Self.thumbnails_fk_thumbnails_locations" FromRole="thumbnails" ToRole="site_locations" />
+  </EntityType>
+  <EntityType Name="vote_type">
+    <Key>
+      <PropertyRef Name="VoteTypeId" />
+    </Key>
+    <Property Name="VoteTypeId" Type="Int32" Nullable="false" />
+    <Property Name="VoteType" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="gallery_votes" Relationship="Self.FK_gallery_votes_vote_type" FromRole="vote_type" ToRole="gallery_votes" />
+    <NavigationProperty Name="image_votes" Relationship="Self.FK_image_votes_vote_type" FromRole="vote_type" ToRole="image_votes" />
+    <NavigationProperty Name="subject_votes" Relationship="Self.FK_subject_votes_vote_type" FromRole="vote_type" ToRole="subject_votes" />
+  </EntityType>
+  <EntityType Name="gallery_images">
+    <Key>
+      <PropertyRef Name="ImageID" />
+      <PropertyRef Name="GalleryID" />
+      <PropertyRef Name="DateAdded" />
+      <PropertyRef Name="AddedBy" />
+      <PropertyRef Name="TimesViewed" />
+    </Key>
+    <Property Name="ImageID" Type="Int32" Nullable="false" />
+    <Property Name="GalleryID" Type="Int32" Nullable="false" />
+    <Property Name="DateAdded" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="AddedBy" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TimesViewed" Type="Int64" Nullable="false" />
+    <NavigationProperty Name="AspNetUser" Relationship="Self.gallery_images_fk_galleryimages_users" FromRole="gallery_images" ToRole="AspNetUsers" />
+    <NavigationProperty Name="gallery" Relationship="Self.gallery_images_fk_galleryimages_galleries" FromRole="gallery_images" ToRole="gallery" />
+    <NavigationProperty Name="image" Relationship="Self.gallery_images_fk_galleryimages_images" FromRole="gallery_images" ToRole="image" />
+  </EntityType>
+  <EntityType Name="gallery_ratings">
+    <Key>
+      <PropertyRef Name="GalleryID" />
+      <PropertyRef Name="Rating" />
+      <PropertyRef Name="DateRating" />
+    </Key>
+    <Property Name="GalleryID" Type="Int32" Nullable="false" />
+    <Property Name="Rating" Type="Int32" Nullable="false" />
+    <Property Name="DateRating" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="gallery" Relationship="Self.gallery_ratings_fk_galleryrating_gallery" FromRole="gallery_ratings" ToRole="gallery" />
+  </EntityType>
+  <EntityType Name="gallery_votes">
+    <Key>
+      <PropertyRef Name="GalleryID" />
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="VoteType" />
+      <PropertyRef Name="Date" />
+    </Key>
+    <Property Name="GalleryID" Type="Int32" Nullable="false" />
+    <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="VoteType" Type="Int32" Nullable="false" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="gallery" Relationship="Self.gallery_votes_fk_galleryvotes_galleries" FromRole="gallery_votes" ToRole="gallery" />
+    <NavigationProperty Name="vote_type" Relationship="Self.FK_gallery_votes_vote_type" FromRole="gallery_votes" ToRole="vote_type" />
+  </EntityType>
+  <EntityType Name="image_ratings">
+    <Key>
+      <PropertyRef Name="ImageID" />
+      <PropertyRef Name="Rating" />
+      <PropertyRef Name="DateRating" />
+    </Key>
+    <Property Name="ImageID" Type="Int32" Nullable="false" />
+    <Property Name="Rating" Type="Int32" Nullable="false" />
+    <Property Name="DateRating" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="image" Relationship="Self.images_ratings_fk_imagesratings_images" FromRole="image_ratings" ToRole="image" />
+  </EntityType>
+  <EntityType Name="image_tags">
+    <Key>
+      <PropertyRef Name="ImageID" />
+      <PropertyRef Name="Tag" />
+      <PropertyRef Name="TaggedBy" />
+      <PropertyRef Name="DateTagged" />
+    </Key>
+    <Property Name="ImageID" Type="Int32" Nullable="false" />
+    <Property Name="Tag" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TaggedBy" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DateTagged" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="AspNetUser" Relationship="Self.image_tags_fk_imagetags_users" FromRole="image_tags" ToRole="AspNetUsers" />
+    <NavigationProperty Name="image" Relationship="Self.image_tags_fk_imagetags_images" FromRole="image_tags" ToRole="image" />
+  </EntityType>
+  <EntityType Name="image_votes">
+    <Key>
+      <PropertyRef Name="ImageID" />
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="VoteType" />
+      <PropertyRef Name="Date" />
+    </Key>
+    <Property Name="ImageID" Type="Int32" Nullable="false" />
+    <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="VoteType" Type="Int32" Nullable="false" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="image" Relationship="Self.images_votes_fk_imagesvotes_images" FromRole="image_votes" ToRole="image" />
+    <NavigationProperty Name="vote_type" Relationship="Self.FK_image_votes_vote_type" FromRole="image_votes" ToRole="vote_type" />
+  </EntityType>
+  <EntityType Name="naming_corrections">
+    <Key>
+      <PropertyRef Name="CorrectedBy" />
+      <PropertyRef Name="CorrectedEntry" />
+      <PropertyRef Name="DateOfCorrection" />
+    </Key>
+    <Property Name="SubjectID" Type="Int32" />
+    <Property Name="GalleryID" Type="Int32" />
+    <Property Name="ImageID" Type="Int32" />
+    <Property Name="CorrectedBy" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CorrectedEntry" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DateOfCorrection" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="AspNetUser" Relationship="Self.FK_naming_corrections_AspNetUsers" FromRole="naming_corrections" ToRole="AspNetUsers" />
+    <NavigationProperty Name="gallery" Relationship="Self.naming_corrections_fk_namingcorrections_galleries" FromRole="naming_corrections" ToRole="gallery" />
+    <NavigationProperty Name="image" Relationship="Self.naming_corrections_fk_namingcorrections_images" FromRole="naming_corrections" ToRole="image" />
+    <NavigationProperty Name="subject" Relationship="Self.naming_corrections_fk_namingcorrections_subjects" FromRole="naming_corrections" ToRole="subject" />
+  </EntityType>
+  <EntityType Name="subject_alias">
+    <Key>
+      <PropertyRef Name="SubjectID" />
+      <PropertyRef Name="Alias" />
+    </Key>
+    <Property Name="SubjectID" Type="Int32" Nullable="false" />
+    <Property Name="Alias" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="subject" Relationship="Self.subject_alias_fk_subjectalias_subjects" FromRole="subject_alias" ToRole="subject" />
+  </EntityType>
+  <EntityType Name="subject_rating">
+    <Key>
+      <PropertyRef Name="SubjectID" />
+      <PropertyRef Name="SubjectRating" />
+      <PropertyRef Name="DateRating" />
+    </Key>
+    <Property Name="SubjectID" Type="Int32" Nullable="false" />
+    <Property Name="SubjectRating" Type="Int64" Nullable="false" />
+    <Property Name="DateRating" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="subject" Relationship="Self.subject_rating_fk_subjectrating_subject" FromRole="subject_rating" ToRole="subject" />
+  </EntityType>
+  <EntityType Name="subject_votes">
+    <Key>
+      <PropertyRef Name="SubjectID" />
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="VoteType" />
+      <PropertyRef Name="Date" />
+    </Key>
+    <Property Name="SubjectID" Type="Int32" Nullable="false" />
+    <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="VoteType" Type="Int32" Nullable="false" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="subject" Relationship="Self.subject_votes_fk_subjectvotes_subject" FromRole="subject_votes" ToRole="subject" />
+    <NavigationProperty Name="vote_type" Relationship="Self.FK_subject_votes_vote_type" FromRole="subject_votes" ToRole="vote_type" />
+  </EntityType>
+  <EntityType Name="ViewAllGallery">
+    <Key>
+      <PropertyRef Name="CategoryName" />
+      <PropertyRef Name="DateCreated" />
+      <PropertyRef Name="DateLastModified" />
+      <PropertyRef Name="IsHidden" />
+      <PropertyRef Name="AgeRestricted" />
+      <PropertyRef Name="PermissionLevel" />
+      <PropertyRef Name="Reported" />
+      <PropertyRef Name="TimesViewed" />
+      <PropertyRef Name="CategoryRestricted" />
+      <PropertyRef Name="GalleryID" />
+    </Key>
+    <Property Name="CategoryName" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="GalleryName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="DateCreated" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="DateLastModified" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="SubjectName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="IsHidden" Type="Int16" Nullable="false" />
+    <Property Name="CreatedBy" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="AgeRestricted" Type="Int16" Nullable="false" />
+    <Property Name="PermissionLevel" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Reported" Type="Int16" Nullable="false" />
+    <Property Name="TimesViewed" Type="Int64" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="CategoryRestricted" Type="Int16" Nullable="false" />
+    <Property Name="GalleryID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ViewAllImage">
+    <Key>
+      <PropertyRef Name="ImageID" />
+      <PropertyRef Name="Filename" />
+      <PropertyRef Name="DateAdded" />
+      <PropertyRef Name="Reported" />
+      <PropertyRef Name="PermissionLevel" />
+      <PropertyRef Name="AgeRestricted" />
+      <PropertyRef Name="IsHidden" />
+      <PropertyRef Name="Location" />
+      <PropertyRef Name="UserName" />
+    </Key>
+    <Property Name="ImageID" Type="Int32" Nullable="false" />
+    <Property Name="Filename" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DateAdded" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Reported" Type="Int16" Nullable="false" />
+    <Property Name="PermissionLevel" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="AgeRestricted" Type="Int16" Nullable="false" />
+    <Property Name="IsHidden" Type="Int16" Nullable="false" />
+    <Property Name="Location" Type="String" MaxLength="400" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="UserName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ViewGalleryImage">
+    <Key>
+      <PropertyRef Name="GalleryID" />
+      <PropertyRef Name="Location" />
+      <PropertyRef Name="Filename" />
+      <PropertyRef Name="DateAdded" />
+      <PropertyRef Name="AddedBy" />
+      <PropertyRef Name="TimesViewed" />
+      <PropertyRef Name="ImageTimesViewed" />
+      <PropertyRef Name="PermissionLevel" />
+      <PropertyRef Name="AgeRestricted" />
+      <PropertyRef Name="DateCreated" />
+      <PropertyRef Name="DateLastModified" />
+      <PropertyRef Name="SubjectID" />
+      <PropertyRef Name="IsHidden" />
+      <PropertyRef Name="ImageID" />
+    </Key>
+    <Property Name="GalleryID" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Location" Type="String" MaxLength="400" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Filename" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ImageDescription" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="DateAdded" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="AddedBy" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TimesViewed" Type="Int64" Nullable="false" />
+    <Property Name="GalleryName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ImageTimesViewed" Type="Int64" Nullable="false" />
+    <Property Name="PermissionLevel" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="AgeRestricted" Type="Int16" Nullable="false" />
+    <Property Name="GalleryDescription" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="DateCreated" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="DateLastModified" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="SubjectID" Type="Int32" Nullable="false" />
+    <Property Name="IsHidden" Type="Int16" Nullable="false" />
+    <Property Name="ImageID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ViewGalleryRating">
+    <Key>
+      <PropertyRef Name="GalleryID" />
+      <PropertyRef Name="TimesViewed" />
+    </Key>
+    <Property Name="GalleryID" Type="Int32" Nullable="false" />
+    <Property Name="TimesViewed" Type="Int64" Nullable="false" />
+    <Property Name="AverageRatingWhole" Type="Decimal" Precision="10" Scale="0" />
+    <Property Name="AverageRating" Type="Decimal" Precision="38" Scale="6" />
+  </EntityType>
+  <EntityType Name="ViewGalleryVote">
+    <Key>
+      <PropertyRef Name="GalleryID" />
+      <PropertyRef Name="VoteType" />
+    </Key>
+    <Property Name="GalleryID" Type="Int32" Nullable="false" />
+    <Property Name="VoteType" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TotalVotes" Type="Int32" />
+  </EntityType>
+  <EntityType Name="ViewImageVote">
+    <Key>
+      <PropertyRef Name="ImageID" />
+      <PropertyRef Name="VoteType" />
+    </Key>
+    <Property Name="ImageID" Type="Int32" Nullable="false" />
+    <Property Name="VoteType" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TotalVotes" Type="Int32" />
+  </EntityType>
+  <EntityType Name="ViewSubjectImage">
+    <Key>
+      <PropertyRef Name="ImageID" />
+      <PropertyRef Name="LocationID" />
+      <PropertyRef Name="Filename" />
+      <PropertyRef Name="SubjectID" />
+      <PropertyRef Name="Location" />
+    </Key>
+    <Property Name="ImageID" Type="Int32" Nullable="false" />
+    <Property Name="LocationID" Type="Int32" Nullable="false" />
+    <Property Name="Filename" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="SubjectID" Type="Int32" Nullable="false" />
+    <Property Name="Location" Type="String" MaxLength="400" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ViewSubjectNamesAndId">
+    <Key>
+      <PropertyRef Name="SubjectID" />
+    </Key>
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="SubjectID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="ViewSubjectVote">
+    <Key>
+      <PropertyRef Name="SubjectID" />
+      <PropertyRef Name="VoteType" />
+    </Key>
+    <Property Name="SubjectID" Type="Int32" Nullable="false" />
+    <Property Name="VoteType" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TotalVotes" Type="Int32" />
+  </EntityType>
+  <Association Name="FK_subjects_AspNetRoles">
+    <End Role="AspNetRoles" Type="Self.AspNetRole" Multiplicity="1" />
+    <End Role="subject" Type="Self.subject" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetRoles">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="subject">
+        <PropertyRef Name="PermissionLevel" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="galleries_fk_gallery_roles">
+    <End Role="AspNetRoles" Type="Self.AspNetRole" Multiplicity="1" />
+    <End Role="gallery" Type="Self.gallery" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetRoles">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="gallery">
+        <PropertyRef Name="PermissionLevel" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="images_fk_images_roles">
+    <End Role="AspNetRoles" Type="Self.AspNetRole" Multiplicity="1" />
+    <End Role="image" Type="Self.image" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetRoles">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="image">
+        <PropertyRef Name="PermissionLevel" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserClaims" Type="Self.AspNetUserClaim" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserClaims">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserLogins" Type="Self.AspNetUserLogin" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserLogins">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="comments_fk_comments_users">
+    <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="1" />
+    <End Role="comments" Type="Self.comment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="comments">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_naming_corrections_AspNetUsers">
+    <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="1" />
+    <End Role="naming_corrections" Type="Self.naming_corrections" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="naming_corrections">
+        <PropertyRef Name="CorrectedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="galleries_fk_gallery_users">
+    <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="0..1" />
+    <End Role="gallery" Type="Self.gallery" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="gallery">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="gallery_images_fk_galleryimages_users">
+    <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="1" />
+    <End Role="gallery_images" Type="Self.gallery_images" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="gallery_images">
+        <PropertyRef Name="AddedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="gallery_reports_fk_galleryreports_users">
+    <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="1" />
+    <End Role="gallery_reports" Type="Self.gallery_reports" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="gallery_reports">
+        <PropertyRef Name="ReportedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="image_tags_fk_imagetags_users">
+    <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="1" />
+    <End Role="image_tags" Type="Self.image_tags" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="image_tags">
+        <PropertyRef Name="TaggedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="images_k_images_users">
+    <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="1" />
+    <End Role="image" Type="Self.image" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="image">
+        <PropertyRef Name="AddedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="images_reports_fk_imagesreports_users">
+    <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="1" />
+    <End Role="image_reports" Type="Self.image_reports" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="image_reports">
+        <PropertyRef Name="ReportedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="subject_reports_fk_subjectreports_users">
+    <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="1" />
+    <End Role="subject_reports" Type="Self.subject_reports" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="subject_reports">
+        <PropertyRef Name="ReportedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="subjects_fk_subject_users">
+    <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="0..1" />
+    <End Role="subject" Type="Self.subject" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="subject">
+        <PropertyRef Name="AddedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="gallery_images_fk_galleryimages_galleries">
+    <End Role="gallery" Type="Self.gallery" Multiplicity="1" />
+    <End Role="gallery_images" Type="Self.gallery_images" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="gallery">
+        <PropertyRef Name="GalleryID" />
+      </Principal>
+      <Dependent Role="gallery_images">
+        <PropertyRef Name="GalleryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="gallery_ratings_fk_galleryrating_gallery">
+    <End Role="gallery" Type="Self.gallery" Multiplicity="1" />
+    <End Role="gallery_ratings" Type="Self.gallery_ratings" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="gallery">
+        <PropertyRef Name="GalleryID" />
+      </Principal>
+      <Dependent Role="gallery_ratings">
+        <PropertyRef Name="GalleryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="gallery_reports_fk_galleryreports_gallery">
+    <End Role="gallery" Type="Self.gallery" Multiplicity="1" />
+    <End Role="gallery_reports" Type="Self.gallery_reports" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="gallery">
+        <PropertyRef Name="GalleryID" />
+      </Principal>
+      <Dependent Role="gallery_reports">
+        <PropertyRef Name="GalleryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="gallery_votes_fk_galleryvotes_galleries">
+    <End Role="gallery" Type="Self.gallery" Multiplicity="1" />
+    <End Role="gallery_votes" Type="Self.gallery_votes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="gallery">
+        <PropertyRef Name="GalleryID" />
+      </Principal>
+      <Dependent Role="gallery_votes">
+        <PropertyRef Name="GalleryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="naming_corrections_fk_namingcorrections_galleries">
+    <End Role="gallery" Type="Self.gallery" Multiplicity="0..1" />
+    <End Role="naming_corrections" Type="Self.naming_corrections" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="gallery">
+        <PropertyRef Name="GalleryID" />
+      </Principal>
+      <Dependent Role="naming_corrections">
+        <PropertyRef Name="GalleryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="gallery_reports_fk_galleryreports_reporttypes">
+    <End Role="report_types" Type="Self.report_types" Multiplicity="1" />
+    <End Role="gallery_reports" Type="Self.gallery_reports" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="report_types">
+        <PropertyRef Name="ReportTypeId" />
+      </Principal>
+      <Dependent Role="gallery_reports">
+        <PropertyRef Name="Type" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="gallery_images_fk_galleryimages_images">
+    <End Role="image" Type="Self.image" Multiplicity="1" />
+    <End Role="gallery_images" Type="Self.gallery_images" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="image">
+        <PropertyRef Name="ImageID" />
+      </Principal>
+      <Dependent Role="gallery_images">
+        <PropertyRef Name="ImageID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="image_tags_fk_imagetags_images">
+    <End Role="image" Type="Self.image" Multiplicity="1" />
+    <End Role="image_tags" Type="Self.image_tags" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="image">
+        <PropertyRef Name="ImageID" />
+      </Principal>
+      <Dependent Role="image_tags">
+        <PropertyRef Name="ImageID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="images_fk_images_locations">
+    <End Role="site_locations" Type="Self.site_locations" Multiplicity="1" />
+    <End Role="image" Type="Self.image" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="site_locations">
+        <PropertyRef Name="LocationID" />
+      </Principal>
+      <Dependent Role="image">
+        <PropertyRef Name="LocationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="images_ratings_fk_imagesratings_images">
+    <End Role="image" Type="Self.image" Multiplicity="1" />
+    <End Role="image_ratings" Type="Self.image_ratings" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="image">
+        <PropertyRef Name="ImageID" />
+      </Principal>
+      <Dependent Role="image_ratings">
+        <PropertyRef Name="ImageID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="images_reports_fk_imagesreports_images">
+    <End Role="image" Type="Self.image" Multiplicity="1" />
+    <End Role="image_reports" Type="Self.image_reports" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="image">
+        <PropertyRef Name="ImageID" />
+      </Principal>
+      <Dependent Role="image_reports">
+        <PropertyRef Name="ImageID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="images_votes_fk_imagesvotes_images">
+    <End Role="image" Type="Self.image" Multiplicity="1" />
+    <End Role="image_votes" Type="Self.image_votes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="image">
+        <PropertyRef Name="ImageID" />
+      </Principal>
+      <Dependent Role="image_votes">
+        <PropertyRef Name="ImageID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="naming_corrections_fk_namingcorrections_images">
+    <End Role="image" Type="Self.image" Multiplicity="0..1" />
+    <End Role="naming_corrections" Type="Self.naming_corrections" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="image">
+        <PropertyRef Name="ImageID" />
+      </Principal>
+      <Dependent Role="naming_corrections">
+        <PropertyRef Name="ImageID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="subjects_fk_subject_images">
+    <End Role="image" Type="Self.image" Multiplicity="0..1" />
+    <End Role="subject" Type="Self.subject" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="image">
+        <PropertyRef Name="ImageID" />
+      </Principal>
+      <Dependent Role="subject">
+        <PropertyRef Name="ProfilePicId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="thumbnails_fk_thumbnails_images">
+    <End Role="image" Type="Self.image" Multiplicity="1" />
+    <End Role="thumbnails" Type="Self.thumbnail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="image">
+        <PropertyRef Name="ImageID" />
+      </Principal>
+      <Dependent Role="thumbnails">
+        <PropertyRef Name="MainImageID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="images_reports_fk_imagesreports_reporttype">
+    <End Role="report_types" Type="Self.report_types" Multiplicity="1" />
+    <End Role="image_reports" Type="Self.image_reports" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="report_types">
+        <PropertyRef Name="ReportTypeId" />
+      </Principal>
+      <Dependent Role="image_reports">
+        <PropertyRef Name="Type" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="subject_reports_fk_subjectreports_reporttypes">
+    <End Role="report_types" Type="Self.report_types" Multiplicity="1" />
+    <End Role="subject_reports" Type="Self.subject_reports" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="report_types">
+        <PropertyRef Name="ReportTypeId" />
+      </Principal>
+      <Dependent Role="subject_reports">
+        <PropertyRef Name="Type" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="thumbnails_fk_thumbnails_locations">
+    <End Role="site_locations" Type="Self.site_locations" Multiplicity="1" />
+    <End Role="thumbnails" Type="Self.thumbnail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="site_locations">
+        <PropertyRef Name="LocationID" />
+      </Principal>
+      <Dependent Role="thumbnails">
+        <PropertyRef Name="LocationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="naming_corrections_fk_namingcorrections_subjects">
+    <End Role="subject" Type="Self.subject" Multiplicity="0..1" />
+    <End Role="naming_corrections" Type="Self.naming_corrections" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="subject">
+        <PropertyRef Name="SubjectID" />
+      </Principal>
+      <Dependent Role="naming_corrections">
+        <PropertyRef Name="SubjectID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="subject_alias_fk_subjectalias_subjects">
+    <End Role="subject" Type="Self.subject" Multiplicity="1" />
+    <End Role="subject_alias" Type="Self.subject_alias" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="subject">
+        <PropertyRef Name="SubjectID" />
+      </Principal>
+      <Dependent Role="subject_alias">
+        <PropertyRef Name="SubjectID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="subject_external_links_fk_eternallinks_subject">
+    <End Role="subject" Type="Self.subject" Multiplicity="1" />
+    <End Role="subject_external_links" Type="Self.subject_external_links" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="subject">
+        <PropertyRef Name="SubjectID" />
+      </Principal>
+      <Dependent Role="subject_external_links">
+        <PropertyRef Name="SubjectID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="subject_rating_fk_subjectrating_subject">
+    <End Role="subject" Type="Self.subject" Multiplicity="1" />
+    <End Role="subject_rating" Type="Self.subject_rating" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="subject">
+        <PropertyRef Name="SubjectID" />
+      </Principal>
+      <Dependent Role="subject_rating">
+        <PropertyRef Name="SubjectID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="subject_reports_fk_subjectreports_subject">
+    <End Role="subject" Type="Self.subject" Multiplicity="1" />
+    <End Role="subject_reports" Type="Self.subject_reports" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="subject">
+        <PropertyRef Name="SubjectID" />
+      </Principal>
+      <Dependent Role="subject_reports">
+        <PropertyRef Name="SubjectID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="subject_votes_fk_subjectvotes_subject">
+    <End Role="subject" Type="Self.subject" Multiplicity="1" />
+    <End Role="subject_votes" Type="Self.subject_votes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="subject">
+        <PropertyRef Name="SubjectID" />
+      </Principal>
+      <Dependent Role="subject_votes">
+        <PropertyRef Name="SubjectID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="subject_external_links_fk_subjectexternallinks_subjectexternallinkstype">
+    <End Role="subject_external_links_type" Type="Self.subject_external_links_type" Multiplicity="1" />
+    <End Role="subject_external_links" Type="Self.subject_external_links" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="subject_external_links_type">
+        <PropertyRef Name="LinkTypeID" />
+      </Principal>
+      <Dependent Role="subject_external_links">
+        <PropertyRef Name="Type" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_gallery_votes_vote_type">
+    <End Role="vote_type" Type="Self.vote_type" Multiplicity="1" />
+    <End Role="gallery_votes" Type="Self.gallery_votes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="vote_type">
+        <PropertyRef Name="VoteTypeId" />
+      </Principal>
+      <Dependent Role="gallery_votes">
+        <PropertyRef Name="VoteType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_image_votes_vote_type">
+    <End Role="vote_type" Type="Self.vote_type" Multiplicity="1" />
+    <End Role="image_votes" Type="Self.image_votes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="vote_type">
+        <PropertyRef Name="VoteTypeId" />
+      </Principal>
+      <Dependent Role="image_votes">
+        <PropertyRef Name="VoteType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_subject_votes_vote_type">
+    <End Role="vote_type" Type="Self.vote_type" Multiplicity="1" />
+    <End Role="subject_votes" Type="Self.subject_votes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="vote_type">
+        <PropertyRef Name="VoteTypeId" />
+      </Principal>
+      <Dependent Role="subject_votes">
+        <PropertyRef Name="VoteType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AspNetUserRoles">
+    <End Role="AspNetRoles" Type="Self.AspNetRole" Multiplicity="*" />
+    <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="*" />
+  </Association>
+  <Association Name="comment_replies">
+    <End Role="comments" Type="Self.comment" Multiplicity="*" />
+    <End Role="comments1" Type="Self.comment" Multiplicity="*" />
+  </Association>
+  <Association Name="gallery_categories">
+    <End Role="category" Type="Self.category" Multiplicity="*" />
+    <End Role="gallery" Type="Self.gallery" Multiplicity="*" />
+  </Association>
+  <Association Name="gallery_comments">
+    <End Role="comments" Type="Self.comment" Multiplicity="*" />
+    <End Role="gallery" Type="Self.gallery" Multiplicity="*" />
+  </Association>
+  <Association Name="gallery_subjects">
+    <End Role="gallery" Type="Self.gallery" Multiplicity="*" />
+    <End Role="subject" Type="Self.subject" Multiplicity="*" />
+  </Association>
+  <Association Name="image_categories">
+    <End Role="category" Type="Self.category" Multiplicity="*" />
+    <End Role="image" Type="Self.image" Multiplicity="*" />
+  </Association>
+  <Association Name="image_comments">
+    <End Role="comments" Type="Self.comment" Multiplicity="*" />
+    <End Role="image" Type="Self.image" Multiplicity="*" />
+  </Association>
+  <Association Name="subject_categories">
+    <End Role="category" Type="Self.category" Multiplicity="*" />
+    <End Role="subject" Type="Self.subject" Multiplicity="*" />
+  </Association>
+  <Association Name="subject_comments">
+    <End Role="comments" Type="Self.comment" Multiplicity="*" />
+    <End Role="subject" Type="Self.subject" Multiplicity="*" />
+  </Association>
+  <Association Name="subject_images">
+    <End Role="image" Type="Self.image" Multiplicity="*" />
+    <End Role="subject" Type="Self.subject" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="GalleryDB_Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="C__MigrationHistory" EntityType="Self.C__MigrationHistory" />
+    <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRole" />
+    <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaim" />
+    <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogin" />
+    <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUser" />
+    <EntitySet Name="categories" EntityType="Self.category" />
+    <EntitySet Name="comments" EntityType="Self.comment" />
+    <EntitySet Name="galleries" EntityType="Self.gallery" />
+    <EntitySet Name="gallery_reports" EntityType="Self.gallery_reports" />
+    <EntitySet Name="images" EntityType="Self.image" />
+    <EntitySet Name="image_reports" EntityType="Self.image_reports" />
+    <EntitySet Name="report_types" EntityType="Self.report_types" />
+    <EntitySet Name="site_locations" EntityType="Self.site_locations" />
+    <EntitySet Name="subjects" EntityType="Self.subject" />
+    <EntitySet Name="subject_external_links" EntityType="Self.subject_external_links" />
+    <EntitySet Name="subject_external_links_type" EntityType="Self.subject_external_links_type" />
+    <EntitySet Name="subject_reports" EntityType="Self.subject_reports" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="thumbnails" EntityType="Self.thumbnail" />
+    <EntitySet Name="vote_type" EntityType="Self.vote_type" />
+    <EntitySet Name="gallery_images" EntityType="Self.gallery_images" />
+    <EntitySet Name="gallery_ratings" EntityType="Self.gallery_ratings" />
+    <EntitySet Name="gallery_votes" EntityType="Self.gallery_votes" />
+    <EntitySet Name="image_ratings" EntityType="Self.image_ratings" />
+    <EntitySet Name="image_tags" EntityType="Self.image_tags" />
+    <EntitySet Name="image_votes" EntityType="Self.image_votes" />
+    <EntitySet Name="naming_corrections" EntityType="Self.naming_corrections" />
+    <EntitySet Name="subject_alias" EntityType="Self.subject_alias" />
+    <EntitySet Name="subject_rating" EntityType="Self.subject_rating" />
+    <EntitySet Name="subject_votes" EntityType="Self.subject_votes" />
+    <EntitySet Name="ViewAllGalleries" EntityType="Self.ViewAllGallery" />
+    <EntitySet Name="ViewAllImages" EntityType="Self.ViewAllImage" />
+    <EntitySet Name="ViewGalleryImages" EntityType="Self.ViewGalleryImage" />
+    <EntitySet Name="ViewGalleryRatings" EntityType="Self.ViewGalleryRating" />
+    <EntitySet Name="ViewGalleryVotes" EntityType="Self.ViewGalleryVote" />
+    <EntitySet Name="ViewImageVotes" EntityType="Self.ViewImageVote" />
+    <EntitySet Name="ViewSubjectImages" EntityType="Self.ViewSubjectImage" />
+    <EntitySet Name="ViewSubjectNamesAndIds" EntityType="Self.ViewSubjectNamesAndId" />
+    <EntitySet Name="ViewSubjectVotes" EntityType="Self.ViewSubjectVote" />
+    <AssociationSet Name="FK_subjects_AspNetRoles" Association="Self.FK_subjects_AspNetRoles">
+      <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+      <End Role="subject" EntitySet="subjects" />
+    </AssociationSet>
+    <AssociationSet Name="galleries_fk_gallery_roles" Association="Self.galleries_fk_gallery_roles">
+      <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+      <End Role="gallery" EntitySet="galleries" />
+    </AssociationSet>
+    <AssociationSet Name="images_fk_images_roles" Association="Self.images_fk_images_roles">
+      <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+      <End Role="image" EntitySet="images" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+    </AssociationSet>
+    <AssociationSet Name="comments_fk_comments_users" Association="Self.comments_fk_comments_users">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="comments" EntitySet="comments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_naming_corrections_AspNetUsers" Association="Self.FK_naming_corrections_AspNetUsers">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="naming_corrections" EntitySet="naming_corrections" />
+    </AssociationSet>
+    <AssociationSet Name="galleries_fk_gallery_users" Association="Self.galleries_fk_gallery_users">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="gallery" EntitySet="galleries" />
+    </AssociationSet>
+    <AssociationSet Name="gallery_images_fk_galleryimages_users" Association="Self.gallery_images_fk_galleryimages_users">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="gallery_images" EntitySet="gallery_images" />
+    </AssociationSet>
+    <AssociationSet Name="gallery_reports_fk_galleryreports_users" Association="Self.gallery_reports_fk_galleryreports_users">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="gallery_reports" EntitySet="gallery_reports" />
+    </AssociationSet>
+    <AssociationSet Name="image_tags_fk_imagetags_users" Association="Self.image_tags_fk_imagetags_users">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="image_tags" EntitySet="image_tags" />
+    </AssociationSet>
+    <AssociationSet Name="images_k_images_users" Association="Self.images_k_images_users">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="image" EntitySet="images" />
+    </AssociationSet>
+    <AssociationSet Name="images_reports_fk_imagesreports_users" Association="Self.images_reports_fk_imagesreports_users">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="image_reports" EntitySet="image_reports" />
+    </AssociationSet>
+    <AssociationSet Name="subject_reports_fk_subjectreports_users" Association="Self.subject_reports_fk_subjectreports_users">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="subject_reports" EntitySet="subject_reports" />
+    </AssociationSet>
+    <AssociationSet Name="subjects_fk_subject_users" Association="Self.subjects_fk_subject_users">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="subject" EntitySet="subjects" />
+    </AssociationSet>
+    <AssociationSet Name="gallery_images_fk_galleryimages_galleries" Association="Self.gallery_images_fk_galleryimages_galleries">
+      <End Role="gallery" EntitySet="galleries" />
+      <End Role="gallery_images" EntitySet="gallery_images" />
+    </AssociationSet>
+    <AssociationSet Name="gallery_ratings_fk_galleryrating_gallery" Association="Self.gallery_ratings_fk_galleryrating_gallery">
+      <End Role="gallery" EntitySet="galleries" />
+      <End Role="gallery_ratings" EntitySet="gallery_ratings" />
+    </AssociationSet>
+    <AssociationSet Name="gallery_reports_fk_galleryreports_gallery" Association="Self.gallery_reports_fk_galleryreports_gallery">
+      <End Role="gallery" EntitySet="galleries" />
+      <End Role="gallery_reports" EntitySet="gallery_reports" />
+    </AssociationSet>
+    <AssociationSet Name="gallery_votes_fk_galleryvotes_galleries" Association="Self.gallery_votes_fk_galleryvotes_galleries">
+      <End Role="gallery" EntitySet="galleries" />
+      <End Role="gallery_votes" EntitySet="gallery_votes" />
+    </AssociationSet>
+    <AssociationSet Name="naming_corrections_fk_namingcorrections_galleries" Association="Self.naming_corrections_fk_namingcorrections_galleries">
+      <End Role="gallery" EntitySet="galleries" />
+      <End Role="naming_corrections" EntitySet="naming_corrections" />
+    </AssociationSet>
+    <AssociationSet Name="gallery_reports_fk_galleryreports_reporttypes" Association="Self.gallery_reports_fk_galleryreports_reporttypes">
+      <End Role="report_types" EntitySet="report_types" />
+      <End Role="gallery_reports" EntitySet="gallery_reports" />
+    </AssociationSet>
+    <AssociationSet Name="gallery_images_fk_galleryimages_images" Association="Self.gallery_images_fk_galleryimages_images">
+      <End Role="image" EntitySet="images" />
+      <End Role="gallery_images" EntitySet="gallery_images" />
+    </AssociationSet>
+    <AssociationSet Name="image_tags_fk_imagetags_images" Association="Self.image_tags_fk_imagetags_images">
+      <End Role="image" EntitySet="images" />
+      <End Role="image_tags" EntitySet="image_tags" />
+    </AssociationSet>
+    <AssociationSet Name="images_fk_images_locations" Association="Self.images_fk_images_locations">
+      <End Role="site_locations" EntitySet="site_locations" />
+      <End Role="image" EntitySet="images" />
+    </AssociationSet>
+    <AssociationSet Name="images_ratings_fk_imagesratings_images" Association="Self.images_ratings_fk_imagesratings_images">
+      <End Role="image" EntitySet="images" />
+      <End Role="image_ratings" EntitySet="image_ratings" />
+    </AssociationSet>
+    <AssociationSet Name="images_reports_fk_imagesreports_images" Association="Self.images_reports_fk_imagesreports_images">
+      <End Role="image" EntitySet="images" />
+      <End Role="image_reports" EntitySet="image_reports" />
+    </AssociationSet>
+    <AssociationSet Name="images_votes_fk_imagesvotes_images" Association="Self.images_votes_fk_imagesvotes_images">
+      <End Role="image" EntitySet="images" />
+      <End Role="image_votes" EntitySet="image_votes" />
+    </AssociationSet>
+    <AssociationSet Name="naming_corrections_fk_namingcorrections_images" Association="Self.naming_corrections_fk_namingcorrections_images">
+      <End Role="image" EntitySet="images" />
+      <End Role="naming_corrections" EntitySet="naming_corrections" />
+    </AssociationSet>
+    <AssociationSet Name="subjects_fk_subject_images" Association="Self.subjects_fk_subject_images">
+      <End Role="image" EntitySet="images" />
+      <End Role="subject" EntitySet="subjects" />
+    </AssociationSet>
+    <AssociationSet Name="thumbnails_fk_thumbnails_images" Association="Self.thumbnails_fk_thumbnails_images">
+      <End Role="image" EntitySet="images" />
+      <End Role="thumbnails" EntitySet="thumbnails" />
+    </AssociationSet>
+    <AssociationSet Name="images_reports_fk_imagesreports_reporttype" Association="Self.images_reports_fk_imagesreports_reporttype">
+      <End Role="report_types" EntitySet="report_types" />
+      <End Role="image_reports" EntitySet="image_reports" />
+    </AssociationSet>
+    <AssociationSet Name="subject_reports_fk_subjectreports_reporttypes" Association="Self.subject_reports_fk_subjectreports_reporttypes">
+      <End Role="report_types" EntitySet="report_types" />
+      <End Role="subject_reports" EntitySet="subject_reports" />
+    </AssociationSet>
+    <AssociationSet Name="thumbnails_fk_thumbnails_locations" Association="Self.thumbnails_fk_thumbnails_locations">
+      <End Role="site_locations" EntitySet="site_locations" />
+      <End Role="thumbnails" EntitySet="thumbnails" />
+    </AssociationSet>
+    <AssociationSet Name="naming_corrections_fk_namingcorrections_subjects" Association="Self.naming_corrections_fk_namingcorrections_subjects">
+      <End Role="subject" EntitySet="subjects" />
+      <End Role="naming_corrections" EntitySet="naming_corrections" />
+    </AssociationSet>
+    <AssociationSet Name="subject_alias_fk_subjectalias_subjects" Association="Self.subject_alias_fk_subjectalias_subjects">
+      <End Role="subject" EntitySet="subjects" />
+      <End Role="subject_alias" EntitySet="subject_alias" />
+    </AssociationSet>
+    <AssociationSet Name="subject_external_links_fk_eternallinks_subject" Association="Self.subject_external_links_fk_eternallinks_subject">
+      <End Role="subject" EntitySet="subjects" />
+      <End Role="subject_external_links" EntitySet="subject_external_links" />
+    </AssociationSet>
+    <AssociationSet Name="subject_rating_fk_subjectrating_subject" Association="Self.subject_rating_fk_subjectrating_subject">
+      <End Role="subject" EntitySet="subjects" />
+      <End Role="subject_rating" EntitySet="subject_rating" />
+    </AssociationSet>
+    <AssociationSet Name="subject_reports_fk_subjectreports_subject" Association="Self.subject_reports_fk_subjectreports_subject">
+      <End Role="subject" EntitySet="subjects" />
+      <End Role="subject_reports" EntitySet="subject_reports" />
+    </AssociationSet>
+    <AssociationSet Name="subject_votes_fk_subjectvotes_subject" Association="Self.subject_votes_fk_subjectvotes_subject">
+      <End Role="subject" EntitySet="subjects" />
+      <End Role="subject_votes" EntitySet="subject_votes" />
+    </AssociationSet>
+    <AssociationSet Name="subject_external_links_fk_subjectexternallinks_subjectexternallinkstype" Association="Self.subject_external_links_fk_subjectexternallinks_subjectexternallinkstype">
+      <End Role="subject_external_links_type" EntitySet="subject_external_links_type" />
+      <End Role="subject_external_links" EntitySet="subject_external_links" />
+    </AssociationSet>
+    <AssociationSet Name="FK_gallery_votes_vote_type" Association="Self.FK_gallery_votes_vote_type">
+      <End Role="vote_type" EntitySet="vote_type" />
+      <End Role="gallery_votes" EntitySet="gallery_votes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_image_votes_vote_type" Association="Self.FK_image_votes_vote_type">
+      <End Role="vote_type" EntitySet="vote_type" />
+      <End Role="image_votes" EntitySet="image_votes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_subject_votes_vote_type" Association="Self.FK_subject_votes_vote_type">
+      <End Role="vote_type" EntitySet="vote_type" />
+      <End Role="subject_votes" EntitySet="subject_votes" />
+    </AssociationSet>
+    <AssociationSet Name="AspNetUserRoles" Association="Self.AspNetUserRoles">
+      <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+    </AssociationSet>
+    <AssociationSet Name="comment_replies" Association="Self.comment_replies">
+      <End Role="comments" EntitySet="comments" />
+      <End Role="comments1" EntitySet="comments" />
+    </AssociationSet>
+    <AssociationSet Name="gallery_categories" Association="Self.gallery_categories">
+      <End Role="category" EntitySet="categories" />
+      <End Role="gallery" EntitySet="galleries" />
+    </AssociationSet>
+    <AssociationSet Name="gallery_comments" Association="Self.gallery_comments">
+      <End Role="comments" EntitySet="comments" />
+      <End Role="gallery" EntitySet="galleries" />
+    </AssociationSet>
+    <AssociationSet Name="gallery_subjects" Association="Self.gallery_subjects">
+      <End Role="gallery" EntitySet="galleries" />
+      <End Role="subject" EntitySet="subjects" />
+    </AssociationSet>
+    <AssociationSet Name="image_categories" Association="Self.image_categories">
+      <End Role="category" EntitySet="categories" />
+      <End Role="image" EntitySet="images" />
+    </AssociationSet>
+    <AssociationSet Name="image_comments" Association="Self.image_comments">
+      <End Role="comments" EntitySet="comments" />
+      <End Role="image" EntitySet="images" />
+    </AssociationSet>
+    <AssociationSet Name="subject_categories" Association="Self.subject_categories">
+      <End Role="category" EntitySet="categories" />
+      <End Role="subject" EntitySet="subjects" />
+    </AssociationSet>
+    <AssociationSet Name="subject_comments" Association="Self.subject_comments">
+      <End Role="comments" EntitySet="comments" />
+      <End Role="subject" EntitySet="subjects" />
+    </AssociationSet>
+    <AssociationSet Name="subject_images" Association="Self.subject_images">
+      <End Role="image" EntitySet="images" />
+      <End Role="subject" EntitySet="subjects" />
+    </AssociationSet>
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(GalleryDbModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(GalleryDbModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+  </EntityContainer>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+</Schema>

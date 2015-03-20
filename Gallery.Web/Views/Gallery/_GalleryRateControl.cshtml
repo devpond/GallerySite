@@ -1,0 +1,9 @@
+﻿@model Gallery.Web.gallery_ratings
+
+<div class="vote-control">
+    @using (Html.BeginForm("GalleryRateControl", "Gallery"))
+    {
+        @Html.DropDownList("rateList")
+        <input type="submit" value="Rate" />
+    }
+</div>

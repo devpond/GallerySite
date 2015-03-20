@@ -1,0 +1,559 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="GalleryDbModelStoreContainer" CdmEntityContainer="GalleryDB_Entities">
+    <EntitySetMapping Name="C__MigrationHistory">
+      <EntityTypeMapping TypeName="GalleryDbModel.C__MigrationHistory">
+        <MappingFragment StoreEntitySet="__MigrationHistory">
+          <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+          <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetRoles">
+      <EntityTypeMapping TypeName="GalleryDbModel.AspNetRole">
+        <MappingFragment StoreEntitySet="AspNetRoles">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUserClaims">
+      <EntityTypeMapping TypeName="GalleryDbModel.AspNetUserClaim">
+        <MappingFragment StoreEntitySet="AspNetUserClaims">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ClaimType" ColumnName="ClaimType" />
+          <ScalarProperty Name="ClaimValue" ColumnName="ClaimValue" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUserLogins">
+      <EntityTypeMapping TypeName="GalleryDbModel.AspNetUserLogin">
+        <MappingFragment StoreEntitySet="AspNetUserLogins">
+          <ScalarProperty Name="LoginProvider" ColumnName="LoginProvider" />
+          <ScalarProperty Name="ProviderKey" ColumnName="ProviderKey" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUsers">
+      <EntityTypeMapping TypeName="GalleryDbModel.AspNetUser">
+        <MappingFragment StoreEntitySet="AspNetUsers">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="EmailConfirmed" ColumnName="EmailConfirmed" />
+          <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+          <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="PhoneNumberConfirmed" ColumnName="PhoneNumberConfirmed" />
+          <ScalarProperty Name="TwoFactorEnabled" ColumnName="TwoFactorEnabled" />
+          <ScalarProperty Name="LockoutEndDateUtc" ColumnName="LockoutEndDateUtc" />
+          <ScalarProperty Name="LockoutEnabled" ColumnName="LockoutEnabled" />
+          <ScalarProperty Name="AccessFailedCount" ColumnName="AccessFailedCount" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="categories">
+      <EntityTypeMapping TypeName="GalleryDbModel.category">
+        <MappingFragment StoreEntitySet="category">
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="AgeRestricted" ColumnName="AgeRestricted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="comments">
+      <EntityTypeMapping TypeName="GalleryDbModel.comment">
+        <MappingFragment StoreEntitySet="comments">
+          <ScalarProperty Name="CommentID" ColumnName="CommentID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="IsReported" ColumnName="IsReported" />
+          <ScalarProperty Name="Comment1" ColumnName="Comment" />
+          <ScalarProperty Name="IsHidden" ColumnName="IsHidden" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="galleries">
+      <EntityTypeMapping TypeName="GalleryDbModel.gallery">
+        <MappingFragment StoreEntitySet="gallery">
+          <ScalarProperty Name="GalleryID" ColumnName="GalleryID" />
+          <ScalarProperty Name="GalleryName" ColumnName="GalleryName" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="DateLastModified" ColumnName="DateLastModified" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="TimesViewed" ColumnName="TimesViewed" />
+          <ScalarProperty Name="Reported" ColumnName="Reported" />
+          <ScalarProperty Name="PermissionLevel" ColumnName="PermissionLevel" />
+          <ScalarProperty Name="AgeRestricted" ColumnName="AgeRestricted" />
+          <ScalarProperty Name="IsHidden" ColumnName="IsHidden" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="gallery_reports">
+      <EntityTypeMapping TypeName="GalleryDbModel.gallery_reports">
+        <MappingFragment StoreEntitySet="gallery_reports">
+          <ScalarProperty Name="GalleryReportID" ColumnName="GalleryReportID" />
+          <ScalarProperty Name="GalleryID" ColumnName="GalleryID" />
+          <ScalarProperty Name="ReportedBy" ColumnName="ReportedBy" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="ReportDate" ColumnName="ReportDate" />
+          <ScalarProperty Name="Comments" ColumnName="Comments" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="images">
+      <EntityTypeMapping TypeName="GalleryDbModel.image">
+        <MappingFragment StoreEntitySet="image">
+          <ScalarProperty Name="ImageID" ColumnName="ImageID" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="Filename" ColumnName="Filename" />
+          <ScalarProperty Name="DateAdded" ColumnName="DateAdded" />
+          <ScalarProperty Name="AddedBy" ColumnName="AddedBy" />
+          <ScalarProperty Name="Reported" ColumnName="Reported" />
+          <ScalarProperty Name="PermissionLevel" ColumnName="PermissionLevel" />
+          <ScalarProperty Name="AgeRestricted" ColumnName="AgeRestricted" />
+          <ScalarProperty Name="FileType" ColumnName="FileType" />
+          <ScalarProperty Name="IsHidden" ColumnName="IsHidden" />
+          <ScalarProperty Name="Width" ColumnName="Width" />
+          <ScalarProperty Name="Height" ColumnName="Height" />
+          <ScalarProperty Name="Orientation" ColumnName="Orientation" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="image_reports">
+      <EntityTypeMapping TypeName="GalleryDbModel.image_reports">
+        <MappingFragment StoreEntitySet="image_reports">
+          <ScalarProperty Name="ImageReportID" ColumnName="ImageReportID" />
+          <ScalarProperty Name="ImageID" ColumnName="ImageID" />
+          <ScalarProperty Name="ReportedBy" ColumnName="ReportedBy" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="ReportDate" ColumnName="ReportDate" />
+          <ScalarProperty Name="Comments" ColumnName="Comments" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="report_types">
+      <EntityTypeMapping TypeName="GalleryDbModel.report_types">
+        <MappingFragment StoreEntitySet="report_types">
+          <ScalarProperty Name="ReportTypeId" ColumnName="ReportTypeId" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="site_locations">
+      <EntityTypeMapping TypeName="GalleryDbModel.site_locations">
+        <MappingFragment StoreEntitySet="site_locations">
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="subjects">
+      <EntityTypeMapping TypeName="GalleryDbModel.subject">
+        <MappingFragment StoreEntitySet="subject">
+          <ScalarProperty Name="SubjectID" ColumnName="SubjectID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Nationality" ColumnName="Nationality" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="AddedBy" ColumnName="AddedBy" />
+          <ScalarProperty Name="Reported" ColumnName="Reported" />
+          <ScalarProperty Name="ProfilePicId" ColumnName="ProfilePicId" />
+          <ScalarProperty Name="PermissionLevel" ColumnName="PermissionLevel" />
+          <ScalarProperty Name="AgeRestricted" ColumnName="AgeRestricted" />
+          <ScalarProperty Name="IsHidden" ColumnName="IsHidden" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="subject_external_links">
+      <EntityTypeMapping TypeName="GalleryDbModel.subject_external_links">
+        <MappingFragment StoreEntitySet="subject_external_links">
+          <ScalarProperty Name="LinkID" ColumnName="LinkID" />
+          <ScalarProperty Name="SubjectID" ColumnName="SubjectID" />
+          <ScalarProperty Name="URL" ColumnName="URL" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="subject_external_links_type">
+      <EntityTypeMapping TypeName="GalleryDbModel.subject_external_links_type">
+        <MappingFragment StoreEntitySet="subject_external_links_type">
+          <ScalarProperty Name="LinkTypeID" ColumnName="LinkTypeID" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="subject_reports">
+      <EntityTypeMapping TypeName="GalleryDbModel.subject_reports">
+        <MappingFragment StoreEntitySet="subject_reports">
+          <ScalarProperty Name="SubjectReportID" ColumnName="SubjectReportID" />
+          <ScalarProperty Name="SubjectID" ColumnName="SubjectID" />
+          <ScalarProperty Name="ReportedBy" ColumnName="ReportedBy" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="ReportDate" ColumnName="ReportDate" />
+          <ScalarProperty Name="Comments" ColumnName="Comments" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="GalleryDbModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="thumbnails">
+      <EntityTypeMapping TypeName="GalleryDbModel.thumbnail">
+        <MappingFragment StoreEntitySet="thumbnails">
+          <ScalarProperty Name="ThumbnailID" ColumnName="ThumbnailID" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="Filename" ColumnName="Filename" />
+          <ScalarProperty Name="MainImageID" ColumnName="MainImageID" />
+          <ScalarProperty Name="FileType" ColumnName="FileType" />
+          <ScalarProperty Name="IsHidden" ColumnName="IsHidden" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vote_type">
+      <EntityTypeMapping TypeName="GalleryDbModel.vote_type">
+        <MappingFragment StoreEntitySet="vote_type">
+          <ScalarProperty Name="VoteTypeId" ColumnName="VoteTypeId" />
+          <ScalarProperty Name="VoteType" ColumnName="VoteType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="gallery_images">
+      <EntityTypeMapping TypeName="GalleryDbModel.gallery_images">
+        <MappingFragment StoreEntitySet="gallery_images">
+          <ScalarProperty Name="ImageID" ColumnName="ImageID" />
+          <ScalarProperty Name="GalleryID" ColumnName="GalleryID" />
+          <ScalarProperty Name="DateAdded" ColumnName="DateAdded" />
+          <ScalarProperty Name="AddedBy" ColumnName="AddedBy" />
+          <ScalarProperty Name="TimesViewed" ColumnName="TimesViewed" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="gallery_ratings">
+      <EntityTypeMapping TypeName="GalleryDbModel.gallery_ratings">
+        <MappingFragment StoreEntitySet="gallery_ratings">
+          <ScalarProperty Name="GalleryID" ColumnName="GalleryID" />
+          <ScalarProperty Name="Rating" ColumnName="Rating" />
+          <ScalarProperty Name="DateRating" ColumnName="DateRating" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="gallery_votes">
+      <EntityTypeMapping TypeName="GalleryDbModel.gallery_votes">
+        <MappingFragment StoreEntitySet="gallery_votes">
+          <ScalarProperty Name="GalleryID" ColumnName="GalleryID" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="VoteType" ColumnName="VoteType" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="image_ratings">
+      <EntityTypeMapping TypeName="GalleryDbModel.image_ratings">
+        <MappingFragment StoreEntitySet="image_ratings">
+          <ScalarProperty Name="ImageID" ColumnName="ImageID" />
+          <ScalarProperty Name="Rating" ColumnName="Rating" />
+          <ScalarProperty Name="DateRating" ColumnName="DateRating" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="image_tags">
+      <EntityTypeMapping TypeName="GalleryDbModel.image_tags">
+        <MappingFragment StoreEntitySet="image_tags">
+          <ScalarProperty Name="ImageID" ColumnName="ImageID" />
+          <ScalarProperty Name="Tag" ColumnName="Tag" />
+          <ScalarProperty Name="TaggedBy" ColumnName="TaggedBy" />
+          <ScalarProperty Name="DateTagged" ColumnName="DateTagged" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="image_votes">
+      <EntityTypeMapping TypeName="GalleryDbModel.image_votes">
+        <MappingFragment StoreEntitySet="image_votes">
+          <ScalarProperty Name="ImageID" ColumnName="ImageID" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="VoteType" ColumnName="VoteType" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="naming_corrections">
+      <EntityTypeMapping TypeName="GalleryDbModel.naming_corrections">
+        <MappingFragment StoreEntitySet="naming_corrections">
+          <ScalarProperty Name="SubjectID" ColumnName="SubjectID" />
+          <ScalarProperty Name="GalleryID" ColumnName="GalleryID" />
+          <ScalarProperty Name="ImageID" ColumnName="ImageID" />
+          <ScalarProperty Name="CorrectedBy" ColumnName="CorrectedBy" />
+          <ScalarProperty Name="CorrectedEntry" ColumnName="CorrectedEntry" />
+          <ScalarProperty Name="DateOfCorrection" ColumnName="DateOfCorrection" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="subject_alias">
+      <EntityTypeMapping TypeName="GalleryDbModel.subject_alias">
+        <MappingFragment StoreEntitySet="subject_alias">
+          <ScalarProperty Name="SubjectID" ColumnName="SubjectID" />
+          <ScalarProperty Name="Alias" ColumnName="Alias" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="subject_rating">
+      <EntityTypeMapping TypeName="GalleryDbModel.subject_rating">
+        <MappingFragment StoreEntitySet="subject_rating">
+          <ScalarProperty Name="SubjectID" ColumnName="SubjectID" />
+          <ScalarProperty Name="SubjectRating" ColumnName="SubjectRating" />
+          <ScalarProperty Name="DateRating" ColumnName="DateRating" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="subject_votes">
+      <EntityTypeMapping TypeName="GalleryDbModel.subject_votes">
+        <MappingFragment StoreEntitySet="subject_votes">
+          <ScalarProperty Name="SubjectID" ColumnName="SubjectID" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="VoteType" ColumnName="VoteType" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ViewAllGalleries">
+      <EntityTypeMapping TypeName="GalleryDbModel.ViewAllGallery">
+        <MappingFragment StoreEntitySet="ViewAllGalleries">
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="GalleryName" ColumnName="GalleryName" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="DateLastModified" ColumnName="DateLastModified" />
+          <ScalarProperty Name="SubjectName" ColumnName="SubjectName" />
+          <ScalarProperty Name="IsHidden" ColumnName="IsHidden" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="AgeRestricted" ColumnName="AgeRestricted" />
+          <ScalarProperty Name="PermissionLevel" ColumnName="PermissionLevel" />
+          <ScalarProperty Name="Reported" ColumnName="Reported" />
+          <ScalarProperty Name="TimesViewed" ColumnName="TimesViewed" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="CategoryRestricted" ColumnName="CategoryRestricted" />
+          <ScalarProperty Name="GalleryID" ColumnName="GalleryID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ViewAllImages">
+      <EntityTypeMapping TypeName="GalleryDbModel.ViewAllImage">
+        <MappingFragment StoreEntitySet="ViewAllImages">
+          <ScalarProperty Name="ImageID" ColumnName="ImageID" />
+          <ScalarProperty Name="Filename" ColumnName="Filename" />
+          <ScalarProperty Name="DateAdded" ColumnName="DateAdded" />
+          <ScalarProperty Name="Reported" ColumnName="Reported" />
+          <ScalarProperty Name="PermissionLevel" ColumnName="PermissionLevel" />
+          <ScalarProperty Name="AgeRestricted" ColumnName="AgeRestricted" />
+          <ScalarProperty Name="IsHidden" ColumnName="IsHidden" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ViewGalleryImages">
+      <EntityTypeMapping TypeName="GalleryDbModel.ViewGalleryImage">
+        <MappingFragment StoreEntitySet="ViewGalleryImages">
+          <ScalarProperty Name="GalleryID" ColumnName="GalleryID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="Filename" ColumnName="Filename" />
+          <ScalarProperty Name="ImageDescription" ColumnName="ImageDescription" />
+          <ScalarProperty Name="DateAdded" ColumnName="DateAdded" />
+          <ScalarProperty Name="AddedBy" ColumnName="AddedBy" />
+          <ScalarProperty Name="TimesViewed" ColumnName="TimesViewed" />
+          <ScalarProperty Name="GalleryName" ColumnName="GalleryName" />
+          <ScalarProperty Name="ImageTimesViewed" ColumnName="ImageTimesViewed" />
+          <ScalarProperty Name="PermissionLevel" ColumnName="PermissionLevel" />
+          <ScalarProperty Name="AgeRestricted" ColumnName="AgeRestricted" />
+          <ScalarProperty Name="GalleryDescription" ColumnName="GalleryDescription" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="DateLastModified" ColumnName="DateLastModified" />
+          <ScalarProperty Name="SubjectID" ColumnName="SubjectID" />
+          <ScalarProperty Name="IsHidden" ColumnName="IsHidden" />
+          <ScalarProperty Name="ImageID" ColumnName="ImageID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ViewGalleryRatings">
+      <EntityTypeMapping TypeName="GalleryDbModel.ViewGalleryRating">
+        <MappingFragment StoreEntitySet="ViewGalleryRating">
+          <ScalarProperty Name="GalleryID" ColumnName="GalleryID" />
+          <ScalarProperty Name="TimesViewed" ColumnName="TimesViewed" />
+          <ScalarProperty Name="AverageRatingWhole" ColumnName="AverageRatingWhole" />
+          <ScalarProperty Name="AverageRating" ColumnName="AverageRating" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ViewGalleryVotes">
+      <EntityTypeMapping TypeName="GalleryDbModel.ViewGalleryVote">
+        <MappingFragment StoreEntitySet="ViewGalleryVotes">
+          <ScalarProperty Name="GalleryID" ColumnName="GalleryID" />
+          <ScalarProperty Name="VoteType" ColumnName="VoteType" />
+          <ScalarProperty Name="TotalVotes" ColumnName="TotalVotes" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ViewImageVotes">
+      <EntityTypeMapping TypeName="GalleryDbModel.ViewImageVote">
+        <MappingFragment StoreEntitySet="ViewImageVotes">
+          <ScalarProperty Name="ImageID" ColumnName="ImageID" />
+          <ScalarProperty Name="VoteType" ColumnName="VoteType" />
+          <ScalarProperty Name="TotalVotes" ColumnName="TotalVotes" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ViewSubjectImages">
+      <EntityTypeMapping TypeName="GalleryDbModel.ViewSubjectImage">
+        <MappingFragment StoreEntitySet="ViewSubjectImages">
+          <ScalarProperty Name="ImageID" ColumnName="ImageID" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="Filename" ColumnName="Filename" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="SubjectID" ColumnName="SubjectID" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ViewSubjectNamesAndIds">
+      <EntityTypeMapping TypeName="GalleryDbModel.ViewSubjectNamesAndId">
+        <MappingFragment StoreEntitySet="ViewSubjectNamesAndId">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="SubjectID" ColumnName="SubjectID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ViewSubjectVotes">
+      <EntityTypeMapping TypeName="GalleryDbModel.ViewSubjectVote">
+        <MappingFragment StoreEntitySet="ViewSubjectVotes">
+          <ScalarProperty Name="SubjectID" ColumnName="SubjectID" />
+          <ScalarProperty Name="VoteType" ColumnName="VoteType" />
+          <ScalarProperty Name="TotalVotes" ColumnName="TotalVotes" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="AspNetUserRoles" TypeName="GalleryDbModel.AspNetUserRoles" StoreEntitySet="AspNetUserRoles">
+      <EndProperty Name="AspNetRoles">
+        <ScalarProperty Name="Id" ColumnName="RoleId" />
+      </EndProperty>
+      <EndProperty Name="AspNetUsers">
+        <ScalarProperty Name="Id" ColumnName="UserId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="comment_replies" TypeName="GalleryDbModel.comment_replies" StoreEntitySet="comment_replies">
+      <EndProperty Name="comments">
+        <ScalarProperty Name="CommentID" ColumnName="CommentID" />
+      </EndProperty>
+      <EndProperty Name="comments1">
+        <ScalarProperty Name="CommentID" ColumnName="ReplyID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="gallery_categories" TypeName="GalleryDbModel.gallery_categories" StoreEntitySet="gallery_categories">
+      <EndProperty Name="category">
+        <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+      </EndProperty>
+      <EndProperty Name="gallery">
+        <ScalarProperty Name="GalleryID" ColumnName="GalleryID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="gallery_comments" TypeName="GalleryDbModel.gallery_comments" StoreEntitySet="gallery_comments">
+      <EndProperty Name="comments">
+        <ScalarProperty Name="CommentID" ColumnName="CommentID" />
+      </EndProperty>
+      <EndProperty Name="gallery">
+        <ScalarProperty Name="GalleryID" ColumnName="GalleryID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="gallery_subjects" TypeName="GalleryDbModel.gallery_subjects" StoreEntitySet="gallery_subjects">
+      <EndProperty Name="gallery">
+        <ScalarProperty Name="GalleryID" ColumnName="GalleryID" />
+      </EndProperty>
+      <EndProperty Name="subject">
+        <ScalarProperty Name="SubjectID" ColumnName="SubjectID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="image_categories" TypeName="GalleryDbModel.image_categories" StoreEntitySet="image_categories">
+      <EndProperty Name="category">
+        <ScalarProperty Name="CategoryID" ColumnName="CategoryId" />
+      </EndProperty>
+      <EndProperty Name="image">
+        <ScalarProperty Name="ImageID" ColumnName="ImageId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="image_comments" TypeName="GalleryDbModel.image_comments" StoreEntitySet="image_comments">
+      <EndProperty Name="comments">
+        <ScalarProperty Name="CommentID" ColumnName="CommentID" />
+      </EndProperty>
+      <EndProperty Name="image">
+        <ScalarProperty Name="ImageID" ColumnName="ImageID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="subject_categories" TypeName="GalleryDbModel.subject_categories" StoreEntitySet="subject_categories">
+      <EndProperty Name="category">
+        <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+      </EndProperty>
+      <EndProperty Name="subject">
+        <ScalarProperty Name="SubjectID" ColumnName="SubjectID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="subject_comments" TypeName="GalleryDbModel.subject_comments" StoreEntitySet="subject_comments">
+      <EndProperty Name="comments">
+        <ScalarProperty Name="CommentID" ColumnName="CommentID" />
+      </EndProperty>
+      <EndProperty Name="subject">
+        <ScalarProperty Name="SubjectID" ColumnName="SubjectID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="subject_images" TypeName="GalleryDbModel.subject_images" StoreEntitySet="subject_images">
+      <EndProperty Name="image">
+        <ScalarProperty Name="ImageID" ColumnName="ImageID" />
+      </EndProperty>
+      <EndProperty Name="subject">
+        <ScalarProperty Name="SubjectID" ColumnName="SubjectID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="GalleryDbModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="GalleryDbModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="GalleryDbModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="GalleryDbModel.Store.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GalleryDbModel.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="GalleryDbModel.Store.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GalleryDbModel.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="GalleryDbModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="GalleryDbModel.Store.sp_upgraddiagrams" />
+  </EntityContainerMapping>
+</Mapping>
