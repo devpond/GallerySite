@@ -116,16 +116,7 @@
 
     </dl>
 </div>
-
-<div class="detail-box">
-    <h3>Galleries:</h3>
-    @foreach (var i in Model.galleries)
-    {
-        @Html.ActionLink(i.GalleryName, "ViewGallery", "GalleryTest", new {id = i.GalleryID}, null)
-        <br/>
-    }
-
-</div>
+@Html.Partial("_GalleryPreviewPartial", this.Model)
 <hr/>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.SubjectID }) |

@@ -25,6 +25,35 @@ namespace Gallery.Web.Controllers
         {
             ViewBag.ApplicationTitle = "ViewImages";
 
+            var obj = GetNames();
+            
+            ViewBag.SubjectList = obj;
+
+            return View(db.ViewSubjectImages.ToList());
+        }
+        [HttpPost]
+        public ActionResult ShowImage(int subjectList)
+        {
+            //var subjects = from m in db.ViewSubjectImages
+            //    select m;
+            
+            ViewBag.SubjectList = GetNames();
+            var imgList = new List<ViewSubjectImage>();
+            ViewData["ViewSubjectImages"] = new SelectList(imgList, "SubjectID", "Name");
+            
+            foreach (var i in db.ViewSubjectImages)
+            {
+                if (i.SubjectID.Equals(subjectList))
+                {
+                    imgList.Add(i);
+                }
+
+            }
+            return View(imgList);
+        }
+
+        private List<SelectListItem> GetNames()
+        {
             var obj = new List<SelectListItem>();
             foreach (var i in db.ViewSubjectNamesAndIds.SortBy("Name"))
             {
@@ -34,55 +63,14 @@ namespace Gallery.Web.Controllers
                         Value = i.SubjectID.ToString(CultureInfo.InvariantCulture)
                     });
             }
-            
-            ViewBag.SubjectList = obj;
-
-            return View(db.ViewSubjectImages.ToList());
-        }
-        [HttpPost]
-        public ActionResult ShowImage(int subjectList)
-        {
-            var subjects = from m in db.ViewSubjectImages
-                select m;
-
-            ViewBag.SubjectList = GetNames();
-            var imgList = new List<ViewSubjectImage>();
-            ViewData["ViewSubjectImages"] = new SelectList(imgList, "SubjectID", "Name");
-            //imgSelection = "Haruna Kojima";
-           // subjectList = subjectList.ToString();
-            
-            foreach (var i in db.ViewSubjectImages)
-            {
-                if (i.SubjectID.Equals(subjectList))
-                {
-                    imgList.Add(i);
-                }
-
-                //var c = "SELECT Subject.Name, Subject.Country, Image.Filename, Image.DateAdded, AspNetUsers.UserName FROM subject_images as Q INNER JOIN subject ON Q.SubjectID = subject.subjectId INNER JOIN image ON Q.ImageID = image.ImageID INNER JOIN AspNetUsers ON Image.AddedBy = AspNetUsers.Id WHERE subjects.Name LIKE '" + imgSelection + "'";
-            }
-            return View(imgList);
-        }
-
-        private List<SelectListItem> GetNames()
-        {
-            var obj = new List<SelectListItem>();
-            foreach (var i in db.ViewSubjectImages.SortBy("Name"))
-            //foreach (var i in db.ViewSubjectNamesAndIds.SortBy("Name"))
-            {
-                obj.Add(new SelectListItem()
-                {
-                    Text = i.Name,
-                    Value = i.SubjectID.ToString(CultureInfo.InvariantCulture)
-                });
-            }
             return obj;
         }
 
         public ActionResult RandomImage()
         {
 
-            var selection = db.ViewAllImages.Where(x => x.IsHidden == 0);
-            ViewAllImage image = selection.OrderBy(x => x.ImageID)
+            var selection = db.images.Where(x => x.IsHidden == 0);
+            image image = selection.OrderBy(x => x.ImageID)
                 .Skip(new Random().Next(selection.Count()))
                 .First();
             return PartialView(image);
@@ -90,7 +78,7 @@ namespace Gallery.Web.Controllers
 
         public ActionResult ViewImage(int? Id)
         {
-            var selImage = db.ViewAllImages.SingleOrDefault(x => x.ImageID == Id);
+            var selImage = db.images.SingleOrDefault(x => x.ImageID == Id);
             return View(selImage);
         }
     }

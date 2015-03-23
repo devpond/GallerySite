@@ -1,15 +1,35 @@
-﻿@model Gallery.Web.ViewAllImage
+﻿@model Gallery.Web.image
 
-<div class="RandomImage">
-    @if (Model != null)
-    {
-        var item = Model;
-        var img = item.Location + item.Filename;
-        <h2>@item.Name</h2>
-        <img src ="@img"/>
-    }
-    else
-    {
-  <h1>Nothing to see!</h1>
-    }
-</div>
+@if (Model != null)
+{
+    var img = Model.site_locations.Location + Model.Filename + System.Configuration.ConfigurationManager.AppSettings["PGalleryPreviewCrop"];
+
+    <div class="RandomImage">
+        <p>In This Picture</p>
+        @if(Model.subjects1.Count >= 1)
+        {
+            var count = 1;
+            foreach (var sub in Model.subjects1)
+            {
+
+                if (count < Model.subjects1.Count)
+                {
+                    <h3>@sub.Name, </h3>
+                    count++;
+                }
+                <h3>@sub.Name </h3>
+            }
+        }
+        @{
+            var db = new GalleryDbContext();
+            var galId = db.gallery_images.Where(m => m.ImageID == Model.ImageID).Select(m => m.GalleryID).FirstOrDefault();
+            <a href="@Url.Action("ViewGallery", "Gallery", new {Id = galId}, null)">
+                <img src="@img" />
+            </a>
+        }
+    </div>
+}
+else
+{
+    <h1>Nothing to see!</h1>
+}
