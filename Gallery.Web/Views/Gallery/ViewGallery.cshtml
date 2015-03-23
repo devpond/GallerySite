@@ -19,7 +19,7 @@
             if (item.image.IsHidden != 1)
             {
                 var imgLink = item.image.site_locations.Location + item.image.Filename;
-                var img = item.image.site_locations.Location + item.image.Filename + "?w=200&h=300&mode=crop";
+                var img = item.image.site_locations.Location + item.image.Filename + System.Configuration.ConfigurationManager.AppSettings["PGalleryPreviewCrop"];
 
                 <a href="@Url.Action("ViewImage", "Images", new {Id = item.ImageID}, null)">
                     <img src="@img" />

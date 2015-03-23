@@ -1,4 +1,4 @@
-﻿@model Gallery.Web.ViewAllImage
+﻿@model Gallery.Web.image
 
 @{
     ViewBag.Title = "ViewImage";
@@ -7,7 +7,7 @@
 <h2>ViewImage</h2>
 @if (Model != null)
 {
-    var selImage = Model.Location + Model.Filename;
+    var selImage = Model.site_locations.Location + Model.Filename;
     
     <img src="@selImage"/>
 

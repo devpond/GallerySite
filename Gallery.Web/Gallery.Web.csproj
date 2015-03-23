@@ -533,6 +533,7 @@
     <Content Include="Views\Gallery\GalleryVoteControl.cshtml" />
     <Content Include="Views\Gallery\_GalleryRateControl.cshtml" />
     <Content Include="Views\Gallery\ViewTest.cshtml" />
+    <Content Include="Views\Shared\_GalleryPreviewPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

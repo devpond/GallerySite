@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using Microsoft.Owin.Security.Provider;
 
 namespace Gallery.Web.Controllers
 {
@@ -14,12 +15,41 @@ namespace Gallery.Web.Controllers
         private GalleryDbContext db = new GalleryDbContext();
 
         // GET: Subject
+        [HttpGet]
         public ActionResult Index()
         {
+            ViewData["ViewSubjectImages"] = FilterOptions();
+            ViewBag.filterChoice = FilterOptions();
             var subjects = db.subjects.Include(s => s.AspNetRole).Include(s => s.AspNetUser).Include(s => s.image);
             return View(subjects.ToList());
         }
-
+        [HttpPost]
+        public ActionResult Index(int? filterChoice)
+        {
+            ViewData["ViewSubjectImages"] = FilterOptions();
+            ViewBag.filterChoice = FilterOptions();
+            var subjects = db.subjects.Include(s => s.AspNetRole).Include(s => s.AspNetUser).Include(s => s.image);
+            if (filterChoice == 01)
+            {
+                return View(subjects.Where(x => x.galleries.Count > 0).ToList());
+            }
+            if (filterChoice == 02)
+            {
+                return View(subjects.Where(x => x.galleries.Count == 0).ToList());
+            }
+            if (filterChoice == 03)
+            {
+                return View(subjects.Where(x => x.images.Count > 0).ToList());
+            }
+            if (filterChoice == 04)
+            {
+               return View(subjects.Where(x => x.images.Count == 0).ToList());
+            }
+            else
+            {
+                return View(subjects.ToList());
+            }
+        }
         // GET: Subject/Details/5
         public ActionResult Details(int? id)
         {
@@ -135,5 +165,20 @@ namespace Gallery.Web.Controllers
             }
             base.Dispose(disposing);
         }
+
+        private SelectList FilterOptions()
+        {
+            var filterList = new SelectList(new Dictionary<string, int> 
+        {
+            {"Default", 00},
+            {"Subjects with galleries", 01},
+            {"Subjects without galleries", 02},
+            {"Subjects with images", 03},
+            {"Subjects without images", 04}
+        },
+        "Value", "Key");
+            return filterList;
+        }
+
     }
 }

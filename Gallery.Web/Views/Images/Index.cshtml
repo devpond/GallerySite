@@ -6,7 +6,7 @@
 
 @if (Model != null) { 
 foreach (var item in Model) {
-    var img = item.site_locations.Location + item.Filename;
+    var img = item.site_locations.Location + item.Filename + System.Configuration.ConfigurationManager.AppSettings["PImgMediumCrop"];
     var loc = item.site_locations.Location;
     <div class="singleImage">
         <img src="@img" />

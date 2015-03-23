@@ -9,8 +9,7 @@
 {
     using (Html.BeginForm("ShowImage","Images"))
     {
-        @*Html.DropDownList("SubjectList", null, new { @name = "imgSelection", onchange = "submit()"}); *@
-        @Html.DropDownList("subjectList")
+        @Html.DropDownList("subjectList", null, new { onchange = "submit()"})
         <input type='submit' value='Submit' />
     }
     
@@ -21,12 +20,12 @@
         var imgSmall = img + imgSetting;
         //var img = item.Filename;
         //var loc = "/Assets/Images/" + img;
-        <div class="singleImage">
+        <div class="singleImage" style="display: inline-block">
+            @Html.ActionLink(item.Name, "Details", "Subject", new { id = item.SubjectID }, null)
+            <br/>
             <a href="@img">
-            @item.Name<br/>
-            <img src="@imgSmall" />
-                </a>
-                <br/>
+                <img src="@imgSmall" />
+            </a>
         </div>
     }
 }
