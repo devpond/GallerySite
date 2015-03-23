@@ -1,0 +1,22 @@
+﻿@model subject
+
+<div class="detail-box">
+    <h3>Galleries:</h3>
+    @foreach (var i in Model.galleries)
+    {
+        @Html.ActionLink(i.GalleryName, "ViewGallery", "Gallery", new { id = i.GalleryID }, null) <br />
+        var galImgs = i.gallery_images.Where(x => x.GalleryID == i.GalleryID).OrderByDescending(d => d.DateAdded);
+        var count = 0;
+        foreach (var img in galImgs)
+        {
+            if (count < 6)
+            {
+                var imgLoc = img.image.site_locations.Location + img.image.Filename + System.Configuration.ConfigurationManager.AppSettings["PImgThumbnailCrop"];
+                <img src="@imgLoc" style="display: inline-block" />
+                count++;
+            }
+        }
+        <hr />
+        <br />
+    }
+</div>
